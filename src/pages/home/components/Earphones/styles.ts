@@ -5,6 +5,16 @@ export const Container = styled('div', {
   flexDirection: 'column',
   gap: '1.5rem',
   marginTop: '1.5rem',
+  width: '100%',
+
+  '@media (min-width: 768px)': {
+    flexDirection: 'row',
+    marginTop: '2rem',
+  },
+
+  '@media (min-width: 1024px)': {
+    marginTop: '2.5rem',
+  },
 })
 
 export const ImageContainer = styled('div', {
@@ -14,6 +24,15 @@ export const ImageContainer = styled('div', {
   width: '100%',
   height: '12.5rem',
   borderRadius: 8,
+
+  '@media (min-width: 768px)': {
+    height: 320,
+    backgroundImage: 'url("assets/home/tablet/image-earphones-yx1.jpg")',
+  },
+
+  '@media (min-width: 1024px)': {
+    backgroundImage: 'url("assets/home/desktop/image-earphones-yx1.jpg")',
+  },
 })
 
 export const CardContainer = styled('div', {
@@ -32,5 +51,10 @@ export const CardContainer = styled('div', {
     fontSize: '$ft_h4',
     fontWeight: 700,
     color: '$black',
+  },
+
+  '@media (min-width: 768px)': {
+    height: 320,
+    paddingLeft: '3rem',
   },
 })

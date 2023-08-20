@@ -2,30 +2,22 @@ import { Header } from '@/components/Header'
 import {
   Container,
   FooterContainer,
-  HeadphoneContainer,
   ProductsContainer,
   ShopContainer,
 } from './styles'
 import { ShopCard } from '@/components/ShopCard'
-import ProductCard from './components/ProductCard'
-import { Zx9Speaker } from './components/Zx9Speaker'
-import { Zx7Speaker } from './components/Zx7Speaker'
+import { Zx9SpeakerCard } from './components/Zx9SpeakerCard'
+import { Zx7SpeakerCard } from './components/Zx7SpeakerCard'
 import { Earphones } from './components/Earphones'
 import { FooterCard } from '@/components/FooterCard'
 import { Footer } from '@/components/Footer'
+import HeadphonesCard from './components/HeadphonesCard'
 
 export default function Home() {
   return (
     <Container>
       <Header />
-      <HeadphoneContainer>
-        <ProductCard
-          title="XX99 Mark II Headphones"
-          description="Experience natural, lifelike audio and exceptional build quality made
-          for the passionate music enthusiast."
-          buttonType="primary"
-        />
-      </HeadphoneContainer>
+      <HeadphonesCard />
       <ProductsContainer>
         <ShopContainer>
           <ShopCard
@@ -41,8 +33,8 @@ export default function Home() {
             imageUrl="/assets/shared/desktop/image-category-thumbnail-earphones.png"
           />
         </ShopContainer>
-        <Zx9Speaker />
-        <Zx7Speaker />
+        <Zx9SpeakerCard />
+        <Zx7SpeakerCard />
         <Earphones />
       </ProductsContainer>
       <FooterContainer>

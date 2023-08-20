@@ -4,6 +4,8 @@ import {
   LinksContainer,
   LinksContent,
   MediaContainer,
+  MediaWrapper,
+  PageButton,
   Tag,
   TextContainer,
 } from './styles'
@@ -22,10 +24,10 @@ export function Footer() {
       <LinksContainer>
         <Image src={LogoSvg} alt="" width={143} />
         <LinksContent>
-          <a href="">Home</a>
-          <a href="">Headphones</a>
-          <a href="">Speakers</a>
-          <a href="">Earphones</a>
+          <PageButton>Home</PageButton>
+          <PageButton>Headphones</PageButton>
+          <PageButton>Speakers</PageButton>
+          <PageButton>Earphones</PageButton>
         </LinksContent>
       </LinksContainer>
       <TextContainer>
@@ -35,13 +37,15 @@ export function Footer() {
           devoted to helping you get the most out of personal audio. Come and
           visit our demo facility - we&apos;re open 7 days a week.
         </p>
-        <span>Copyright 2021. All Rights Reserved</span>
       </TextContainer>
-      <MediaContainer>
-        <FontAwesomeIcon icon={faSquareFacebook} />
-        <FontAwesomeIcon icon={faTwitter} />
-        <FontAwesomeIcon icon={faInstagram} />
-      </MediaContainer>
+      <MediaWrapper>
+        <p>Copyright 2021. All Rights Reserved</p>
+        <MediaContainer>
+          <FontAwesomeIcon icon={faSquareFacebook} />
+          <FontAwesomeIcon icon={faTwitter} />
+          <FontAwesomeIcon icon={faInstagram} />
+        </MediaContainer>
+      </MediaWrapper>
     </Container>
   )
 }

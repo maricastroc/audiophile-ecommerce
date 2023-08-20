@@ -1,6 +1,7 @@
 import { styled } from '../../styles'
 
 export const Container = styled('div', {
+  cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -11,18 +12,34 @@ export const Container = styled('div', {
     backgroundColor: '$orange500',
     color: '$white',
     border: 'none',
+
+    '&:hover': {
+      transition: 'all 200ms',
+      backgroundColor: '$orange300',
+    },
   },
 
   '&.secondary': {
     backgroundColor: '$black',
     color: '$white',
     border: 'none',
+
+    '&:hover': {
+      transition: 'all 200ms',
+      backgroundColor: '$gray700',
+    },
   },
 
   '&.tertiary': {
     backgroundColor: 'transparent',
     border: 'solid 1px $black',
     color: '$black',
+
+    '&:hover': {
+      backgroundColor: '$black',
+      transition: 'all 200ms',
+      color: '$white',
+    },
   },
 
   p: {

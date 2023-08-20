@@ -8,11 +8,21 @@ export const Container = styled('div', {
   borderRadius: '8px',
   padding: '1.375rem',
   backgroundColor: '$gray200',
+  width: '100%',
+  margin: '0 auto',
 
   img: {
     marginTop: '-5rem',
     width: '11rem',
     height: 'auto',
+  },
+
+  '@media (min-width: 420px)': {
+    width: '20.4375rem',
+  },
+
+  '@media (min-width: 768px)': {
+    width: 'clamp(10rem, 27vw, 20.4375rem)',
   },
 })
 

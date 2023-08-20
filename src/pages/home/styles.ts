@@ -6,44 +6,55 @@ export const Container = styled('div', {
   width: '100%',
 })
 
-export const HeadphoneContainer = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  textAlign: 'center',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundImage: 'url("./assets/home/mobile/image-header.jpg")',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: '100% 100%',
-  marginTop: '-6rem',
-  marginBottom: '6.75rem',
-  height: '37.5rem',
-
-  '@media (min-width: 450px)': {
-    backgroundImage: 'url("./assets/home/tablet/image-header.jpg")',
-    backgroundPosition: 'center top',
-    backgroundSize: 'cover',
-    marginTop: '-4rem',
-    marginBottom: '9.25rem',
-  },
-})
-
 export const ShopContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '5.3rem',
+  width: '100%',
+
+  '@media (min-width: 768px)': {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '1.5rem',
+    margin: '0 auto',
+  },
 })
 
 export const ProductsContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
   width: '100%',
   padding: '0 1.5rem',
+  margin: '0 auto',
+
+  '@media (min-width: 768px)': {
+    maxWidth: '69.375rem',
+    padding: '0 2.5rem',
+  },
+
+  '@media (min-width: 1024px)': {
+    maxWidth: '75rem',
+    padding: '0 4.5rem',
+  },
 })
 
 export const FooterContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
+  margin: '0 auto',
   padding: '0 1.5rem',
+
+  '@media (min-width: 768px)': {
+    maxWidth: '69.375rem',
+    padding: '0 2.5rem',
+  },
+
+  '@media (min-width: 1024px)': {
+    maxWidth: '75rem',
+    padding: '0 4.5rem',
+  },
 })

@@ -1,7 +1,7 @@
 import { Button } from '@/components/Button'
 import { Container, TextContainer } from './styles'
 
-export function Zx7Speaker() {
+export function Zx7SpeakerCard() {
   return (
     <Container>
       <TextContainer>

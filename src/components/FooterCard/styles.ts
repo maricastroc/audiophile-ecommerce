@@ -1,26 +1,50 @@
 import { styled } from '../../styles'
 
 export const Container = styled('div', {
-  margin: '7.5rem 0',
+  margin: '7.5rem auto',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   width: '100%',
+
+  '@media (min-width: 768px)': {
+    padding: 0,
+  },
+
+  '@media (min-width: 1024px)': {
+    flexDirection: 'row-reverse',
+    justifyContent: 'space-between',
+  },
 })
 
 export const ImageContainer = styled('div', {
   backgroundImage: 'url("./assets/shared/mobile/image-best-gear.jpg")',
   minHeight: '18rem',
   backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
   width: '100%',
   borderRadius: 8,
+
+  '@media (min-width: 768px)': {
+    backgroundImage: 'url("./assets/shared/tablet/image-best-gear.jpg")',
+  },
+
+  '@media (min-width: 1024px)': {
+    backgroundImage: 'url("./assets/shared/desktop/image-best-gear.jpg")',
+    width: 'auto',
+    minHeight: '28.75rem',
+    minWidth: '25.75rem',
+  },
 })
 
 export const TextContainer = styled('div', {
   marginTop: '2.5rem',
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
   gap: '2rem',
   textAlign: 'center',
 
@@ -44,5 +68,24 @@ export const TextContainer = styled('div', {
     fontSize: '$ft_body',
     lineHeight: '1.6rem',
     marginBottom: '1.75rem',
+    maxWidth: '40rem',
+  },
+
+  '@media (min-width: 768px)': {
+    h3: {
+      fontSize: '$ft_h2',
+      maxWidth: '30rem',
+    },
+
+    span: {
+      fontSize: '$ft_h2',
+    },
+  },
+
+  '@media (min-width: 1024px)': {
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    textAlign: 'left',
+    maxWidth: '23rem',
   },
 })
