@@ -5,7 +5,7 @@ export const Container = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  borderRadius: '8px',
+  borderRadius: 8,
   paddingBottom: '1.375rem',
   backgroundColor: '$gray200',
   width: '100%',

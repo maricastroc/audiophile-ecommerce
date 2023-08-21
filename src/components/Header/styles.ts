@@ -35,6 +35,10 @@ export const Content = styled('header', {
     },
   },
 
+  img: {
+    cursor: 'pointer',
+  },
+
   '@media (min-width: 768px)': {
     img: {
       marginLeft: '-30rem',

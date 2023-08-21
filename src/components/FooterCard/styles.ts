@@ -9,6 +9,7 @@ export const Container = styled('div', {
   width: '100%',
 
   '@media (min-width: 768px)': {
+    margin: '10rem auto',
     padding: 0,
   },
 

@@ -40,6 +40,6 @@ export const ShopContainer = styled('div', {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '1.5rem',
-    margin: '15rem auto 0',
+    margin: '6rem auto 0',
   },
 })

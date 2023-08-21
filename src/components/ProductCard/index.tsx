@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { Container, Heading, Label, Paragraph, TextContainer } from './styles'
 import { Button } from '@/components/Button'
+import { Container, Heading, Label, Paragraph, TextContainer } from './styles'
 
 interface ProductCardProps {
   title: string

@@ -1,4 +1,15 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faInstagram,
+  faSquareFacebook,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons'
+import LogoSvg from '../../../public/assets/shared/desktop/logo.svg'
+import { buttonData } from '@/utils/buttonData'
+
 import {
   Container,
   LinksContainer,
@@ -9,25 +20,26 @@ import {
   Tag,
   TextContainer,
 } from './styles'
-import LogoSvg from '../../../public/assets/shared/desktop/logo.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faInstagram,
-  faSquareFacebook,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons'
 
 export function Footer() {
+  const router = useRouter()
+
+  function redirectToPath(path: string) {
+    const basePath = router.basePath
+    router.push(`${basePath}${path}`)
+  }
+
   return (
     <Container>
       <Tag />
       <LinksContainer>
         <Image src={LogoSvg} alt="" width={143} />
         <LinksContent>
-          <PageButton>Home</PageButton>
-          <PageButton>Headphones</PageButton>
-          <PageButton>Speakers</PageButton>
-          <PageButton>Earphones</PageButton>
+          {buttonData.map(({ label, path }) => (
+            <PageButton key={path} onClick={() => redirectToPath(path)}>
+              {label}
+            </PageButton>
+          ))}
         </LinksContent>
       </LinksContainer>
       <TextContainer>

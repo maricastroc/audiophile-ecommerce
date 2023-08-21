@@ -1,8 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Container, ShopButton, Title } from './styles'
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { useContext } from 'react'
+import { NavbarContext } from '@/contexts/NavbarContext'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+
+import { Container, ShopButton, Title } from './styles'
 
 interface ShopCardProps {
   title: string
@@ -11,10 +15,13 @@ interface ShopCardProps {
 
 export function ShopCard({ title, imageUrl }: ShopCardProps) {
   const router = useRouter()
+  const { handleSetIsNavbarOpen } = useContext(NavbarContext)
 
-  function redirectToPath() {
+  const redirectToPath = () => {
     const basePath = router.basePath
-    router.push(`${basePath}${title.toLowerCase()}`)
+    const path = `${basePath}${title.toLowerCase()}`
+    router.push(path)
+    handleSetIsNavbarOpen()
   }
 
   return (
