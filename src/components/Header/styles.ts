@@ -4,10 +4,27 @@ export const Container = styled('header', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '2rem 1.5rem',
+  padding: '0 1.5rem',
   height: '100%',
   backgroundColor: '$gray900',
-  zIndex: 9999,
+  zIndex: 9998,
+
+  '@media (min-width: 768px)': {
+    padding: '0 3.5rem',
+  },
+
+  '@media (min-width: 1024px)': {
+    padding: '0 10rem',
+  },
+})
+
+export const Content = styled('header', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  width: '100%',
+  borderBottom: 'solid 0.8px $gray700',
+  padding: '2.2rem 0',
 
   svg: {
     color: '$white',
@@ -25,8 +42,6 @@ export const Container = styled('header', {
   },
 
   '@media (min-width: 1024px)': {
-    padding: '2rem 10rem',
-
     img: {
       marginLeft: 0,
     },

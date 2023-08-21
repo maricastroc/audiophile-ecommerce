@@ -36,7 +36,7 @@ export const ProductsContainer = styled('div', {
   },
 
   '@media (min-width: 1024px)': {
-    maxWidth: '75rem',
+    maxWidth: '78rem',
     padding: '0 4.5rem',
   },
 })
@@ -54,7 +54,7 @@ export const FooterContainer = styled('div', {
   },
 
   '@media (min-width: 1024px)': {
-    maxWidth: '75rem',
+    maxWidth: '78rem',
     padding: '0 4.5rem',
   },
 })

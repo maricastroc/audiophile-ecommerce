@@ -31,7 +31,7 @@ export const Container = styled('div', {
     backgroundSize: '100% 100%',
     alignItems: 'flex-start',
     textAlign: 'left',
-    paddingLeft: '10rem',
+    padding: '0 10rem',
   },
 })
 

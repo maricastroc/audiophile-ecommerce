@@ -6,10 +6,11 @@ export const Container = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: '8px',
-  padding: '1.375rem',
+  paddingBottom: '1.375rem',
   backgroundColor: '$gray200',
   width: '100%',
   margin: '0 auto',
+  minHeight: 165,
 
   img: {
     marginTop: '-5rem',

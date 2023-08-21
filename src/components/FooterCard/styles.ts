@@ -33,9 +33,8 @@ export const ImageContainer = styled('div', {
 
   '@media (min-width: 1024px)': {
     backgroundImage: 'url("./assets/shared/desktop/image-best-gear.jpg")',
-    width: 'auto',
+    width: 'clamp(25.75rem, 35vw, 540px)',
     minHeight: '28.75rem',
-    minWidth: '25.75rem',
   },
 })
 
@@ -53,6 +52,7 @@ export const TextContainer = styled('div', {
     fontWeight: 700,
     color: '$black',
     textTransform: 'uppercase',
+    lineHeight: '2.8rem',
   },
 
   span: {
@@ -86,6 +86,6 @@ export const TextContainer = styled('div', {
     alignItems: 'center',
     justifyContent: 'flex-start',
     textAlign: 'left',
-    maxWidth: '23rem',
+    maxWidth: '28rem',
   },
 })
