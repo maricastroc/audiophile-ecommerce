@@ -1,4 +1,4 @@
-import { styled } from '../../styles'
+import { styled } from '@/styles'
 
 export const Container = styled('div', {
   margin: '7.5rem auto',

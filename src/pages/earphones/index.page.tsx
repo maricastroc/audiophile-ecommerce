@@ -24,6 +24,28 @@ export default function Earphones() {
     handleResize()
   }, [handleResize])
 
+  const renderProductCards = () => {
+    const productCardData = [
+      {
+        title: 'YX1 wireless earphones',
+        description:
+          'Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.',
+        newProductLabel: true,
+        imageUrl: `/assets/product-yx1-earphones/${screenType}/image-category-page-preview.jpg`,
+      },
+    ]
+
+    return productCardData.map((data, index) => (
+      <ProductCard key={index} {...data} />
+    ))
+  }
+
+  const renderShopCards = () => {
+    return shopCards.map((card, index) => (
+      <ShopCard key={index} title={card.title} imageUrl={card.imageUrl} />
+    ))
+  }
+
   return (
     <Container>
       <Header />
@@ -33,21 +55,8 @@ export default function Earphones() {
         <>
           <ProductsHeader title="Earphones" />
           <ProductsContainer>
-            <ProductCard
-              title="YX1 wireless earphones"
-              description="Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature."
-              newProductLabel={true}
-              imageUrl={`/assets/product-yx1-earphones/${screenType}/image-category-page-preview.jpg`}
-            />
-            <ShopContainer>
-              {shopCards.map((card, index) => (
-                <ShopCard
-                  key={index}
-                  title={card.title}
-                  imageUrl={card.imageUrl}
-                />
-              ))}
-            </ShopContainer>
+            {renderProductCards()}
+            <ShopContainer>{renderShopCards()}</ShopContainer>
           </ProductsContainer>
           <FooterContainer>
             <FooterCard />

@@ -44,6 +44,12 @@ export default function Speakers() {
     ))
   }
 
+  const renderShopCards = () => {
+    return shopCards.map((card, index) => (
+      <ShopCard key={index} title={card.title} imageUrl={card.imageUrl} />
+    ))
+  }
+
   useEffect(() => {
     handleResize()
   }, [handleResize])
@@ -58,15 +64,7 @@ export default function Speakers() {
           <ProductsHeader title="Speakers" />
           <ProductsContainer>
             {renderProductCards()}
-            <ShopContainer>
-              {shopCards.map((card, index) => (
-                <ShopCard
-                  key={index}
-                  title={card.title}
-                  imageUrl={card.imageUrl}
-                />
-              ))}
-            </ShopContainer>
+            <ShopContainer>{renderShopCards()}</ShopContainer>
           </ProductsContainer>
           <FooterContainer>
             <FooterCard />

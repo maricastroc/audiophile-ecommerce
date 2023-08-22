@@ -50,6 +50,12 @@ export default function Headphones() {
     ))
   }
 
+  const renderShopCards = () => {
+    return shopCards.map((card, index) => (
+      <ShopCard key={index} title={card.title} imageUrl={card.imageUrl} />
+    ))
+  }
+
   return (
     <Container>
       <Header />
@@ -60,15 +66,7 @@ export default function Headphones() {
           <ProductsHeader title="Headphones" />
           <ProductsContainer>
             {renderProductCards()}
-            <ShopContainer>
-              {shopCards.map((card, index) => (
-                <ShopCard
-                  key={index}
-                  title={card.title}
-                  imageUrl={card.imageUrl}
-                />
-              ))}
-            </ShopContainer>
+            <ShopContainer>{renderShopCards()}</ShopContainer>
           </ProductsContainer>
           <FooterContainer>
             <FooterCard />
