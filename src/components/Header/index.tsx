@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useContext } from 'react'
 import { NavbarContext } from '@/contexts/NavbarContext'
-import { buttonData } from '@/utils/buttonData'
+import { buttonData } from '@/data/buttonData'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'

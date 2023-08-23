@@ -1,28 +1,17 @@
 import { styled } from '@/styles'
 
-export const ShopContainer = styled('div', {
+export const Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  gap: '5.3rem',
   width: '100%',
-
-  '@media (min-width: 768px)': {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '1.5rem',
-    margin: '0 auto',
-  },
 })
 
-export const ProductsContainer = styled('div', {
+export const FooterContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
   width: '100%',
-  padding: '0 1.5rem',
   margin: '0 auto',
+  padding: '0 1.5rem',
 
   '@media (min-width: 768px)': {
     maxWidth: '69.375rem',

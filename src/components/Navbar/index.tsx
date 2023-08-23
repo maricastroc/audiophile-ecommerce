@@ -1,4 +1,4 @@
-import { shopCards } from '@/utils/shoppingCards'
+import { shopCards } from '@/data/shoppingCards'
 import { ShopCard } from '../ShopCard'
 import { Container } from './styles'
 

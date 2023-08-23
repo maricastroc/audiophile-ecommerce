@@ -1,44 +1,21 @@
-import { FooterContainer } from '../home/styles'
-
-import { Header } from '@/components/Header'
-import { FooterCard } from '@/components/FooterCard'
-import { Footer } from '@/components/Footer'
 import ProductCard from '@/components/ProductCard'
 import { useContext, useEffect } from 'react'
 import { ShopCard } from '@/components/ShopCard'
 import { ProductsHeader } from '@/components/ProductsHeader'
 import { NavbarContext } from '@/contexts/NavbarContext'
 import { Navbar } from '@/components/Navbar'
-import { shopCards } from '@/utils/shoppingCards'
+import { shopCards } from '@/data/shoppingCards'
 
-import {
-  Container,
-  ProductsContainer,
-  ShopContainer,
-} from '../headphones/styles'
+import { ProductsContainer, ShopContainer } from '../headphones/styles'
+import { earphonesData } from '@/data/earphonesData'
+import Layout from '@/components/Layout'
 
 export default function Earphones() {
-  const { isNavbarOpen, screenType, handleResize } = useContext(NavbarContext)
+  const { isNavbarOpen, handleResize } = useContext(NavbarContext)
 
   useEffect(() => {
     handleResize()
   }, [handleResize])
-
-  const renderProductCards = () => {
-    const productCardData = [
-      {
-        title: 'YX1 wireless earphones',
-        description:
-          'Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.',
-        newProductLabel: true,
-        imageUrl: `/assets/product-yx1-earphones/${screenType}/image-category-page-preview.jpg`,
-      },
-    ]
-
-    return productCardData.map((data, index) => (
-      <ProductCard key={index} {...data} />
-    ))
-  }
 
   const renderShopCards = () => {
     return shopCards.map((card, index) => (
@@ -47,23 +24,20 @@ export default function Earphones() {
   }
 
   return (
-    <Container>
-      <Header />
+    <Layout>
       {isNavbarOpen ? (
         <Navbar />
       ) : (
         <>
           <ProductsHeader title="Earphones" />
           <ProductsContainer>
-            {renderProductCards()}
+            {earphonesData.map((data, index) => (
+              <ProductCard key={index} {...data} />
+            ))}
             <ShopContainer>{renderShopCards()}</ShopContainer>
           </ProductsContainer>
-          <FooterContainer>
-            <FooterCard />
-          </FooterContainer>
-          <Footer />
         </>
       )}
-    </Container>
+    </Layout>
   )
 }

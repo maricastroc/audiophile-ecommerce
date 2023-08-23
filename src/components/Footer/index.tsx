@@ -8,7 +8,7 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import LogoSvg from '../../../public/assets/shared/desktop/logo.svg'
-import { buttonData } from '@/utils/buttonData'
+import { buttonData } from '@/data/buttonData'
 
 import {
   Container,

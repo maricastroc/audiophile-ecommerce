@@ -1,30 +1,33 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import Image from 'next/image'
 import { Button } from '@/components/Button'
-import { Container, Heading, Label, Paragraph, TextContainer } from './styles'
+import {
+  Container,
+  Heading,
+  Label,
+  Paragraph,
+  Price,
+  TextContainer,
+} from './styles'
 import { useContext } from 'react'
 import { NavbarContext } from '@/contexts/NavbarContext'
-import { useRouter } from 'next/router'
 import { ProductInfo } from '@/types/productTypes'
+import { formattedPrice } from '@/utils/formatPrice'
 
-export default function ProductCard({
+export default function ShopProductCard({
   title,
   description,
   newProduct,
   imageUrl,
-  name,
-  category,
-  orientation = 'left',
+  price,
 }: ProductInfo) {
   const { screenType } = useContext(NavbarContext)
-  const router = useRouter()
-
-  function redirectToPage() {
-    const basePath = router.basePath
-    router.push(`${basePath}/${category}/products/${name}`)
+  function handleAddProduct() {
+    console.log('test')
   }
 
   return (
-    <Container className={orientation}>
+    <Container>
       <Image
         src={`${imageUrl}${screenType}/image-category-page-preview.jpg`}
         alt=""
@@ -35,7 +38,8 @@ export default function ProductCard({
         {newProduct && <Label>New Product</Label>}
         <Heading>{title}</Heading>
         <Paragraph>{description}</Paragraph>
-        <Button type="primary" title="See Product" onClick={redirectToPage} />
+        {price && <Price>{formattedPrice(price)}</Price>}
+        <Button type="primary" title="AddToCart" onClick={handleAddProduct} />
       </TextContainer>
     </Container>
   )
