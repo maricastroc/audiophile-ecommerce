@@ -20,7 +20,7 @@ export default function ProductCard({
 
   function redirectToPage() {
     const basePath = router.basePath
-    router.push(`${basePath}/${category}/products/${name}`)
+    router.push(`${basePath}/products/${name}`)
   }
 
   return (
