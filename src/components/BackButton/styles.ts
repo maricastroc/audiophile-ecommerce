@@ -3,7 +3,7 @@ import { styled } from '@/styles'
 export const Container = styled('button', {
   display: 'flex',
   alignItems: 'center',
-  marginTop: '1rem',
+  margin: '2.5rem 0',
   backgroundColor: 'transparent',
   border: 'none',
   fontSize: '$ft_body',

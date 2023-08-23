@@ -12,6 +12,7 @@ import { buttonData } from '@/data/buttonData'
 
 import {
   Container,
+  Content,
   LinksContainer,
   LinksContent,
   MediaContainer,
@@ -33,33 +34,35 @@ export function Footer() {
 
   return (
     <Container>
-      <Tag />
-      <LinksContainer>
-        <Image src={LogoSvg} alt="" width={143} />
-        <LinksContent>
-          {buttonData.map(({ label, path }) => (
-            <PageButton key={path} onClick={() => redirectToPath(path)}>
-              {label}
-            </PageButton>
-          ))}
-        </LinksContent>
-      </LinksContainer>
-      <TextContainer>
-        <p>
-          Audiophile is an all in one stop to fulfill your audio needs.
-          We&apos;re a small team of music lovers and sound specialists who are
-          devoted to helping you get the most out of personal audio. Come and
-          visit our demo facility - we&apos;re open 7 days a week.
-        </p>
-      </TextContainer>
-      <MediaWrapper>
-        <p>Copyright 2021. All Rights Reserved</p>
-        <MediaContainer>
-          <FontAwesomeIcon icon={faSquareFacebook} />
-          <FontAwesomeIcon icon={faTwitter} />
-          <FontAwesomeIcon icon={faInstagram} />
-        </MediaContainer>
-      </MediaWrapper>
+      <Content>
+        <Tag />
+        <LinksContainer>
+          <Image src={LogoSvg} alt="" width={143} />
+          <LinksContent>
+            {buttonData.map(({ label, path }) => (
+              <PageButton key={path} onClick={() => redirectToPath(path)}>
+                {label}
+              </PageButton>
+            ))}
+          </LinksContent>
+        </LinksContainer>
+        <TextContainer>
+          <p>
+            Audiophile is an all in one stop to fulfill your audio needs.
+            We&apos;re a small team of music lovers and sound specialists who
+            are devoted to helping you get the most out of personal audio. Come
+            and visit our demo facility - we&apos;re open 7 days a week.
+          </p>
+        </TextContainer>
+        <MediaWrapper>
+          <p>Copyright 2021. All Rights Reserved</p>
+          <MediaContainer>
+            <FontAwesomeIcon icon={faSquareFacebook} />
+            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faInstagram} />
+          </MediaContainer>
+        </MediaWrapper>
+      </Content>
     </Container>
   )
 }

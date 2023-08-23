@@ -3,21 +3,8 @@ import { styled } from '@/styles'
 export const Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  margin: '2.05rem auto 0',
   width: '100%',
-  padding: '1.5rem',
-
-  '@media(min-width: 420px)': {
-    padding: '2.5rem',
-  },
-
-  '@media (min-width: 768px)': {
-    padding: '0 2.5rem',
-  },
-
-  '@media (min-width: 1024px)': {
-    padding: '0 4.5rem',
-  },
+  padding: '0 1.5rem',
 })
 
 export const Content = styled('div', {
@@ -28,16 +15,18 @@ export const Content = styled('div', {
   margin: '0 auto',
   width: '100%',
 
+  '@media(min-width: 420px)': {
+    padding: '0 2.5rem',
+  },
+
   '@media (min-width: 768px)': {
-    maxWidth: '52rem',
+    maxWidth: '69.375rem',
+    padding: '0 2.5rem',
   },
 
   '@media (min-width: 1024px)': {
-    maxWidth: '60rem',
-  },
-
-  '@media (min-width: 1400px)': {
-    maxWidth: '68rem',
+    maxWidth: '78rem',
+    padding: '6rem',
   },
 })
 

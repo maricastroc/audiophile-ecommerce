@@ -14,7 +14,18 @@ export const Container = styled('footer', {
   },
 
   '@media (min-width: 1024px)': {
-    padding: '0 10rem 2.35rem',
+    padding: '0 6rem 2.35rem',
+  },
+})
+
+export const Content = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
+  margin: '0 auto',
+
+  '@media (min-width: 768px)': {
+    maxWidth: '69.375rem',
   },
 })
 

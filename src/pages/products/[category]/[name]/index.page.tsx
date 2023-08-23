@@ -56,8 +56,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         <Navbar />
       ) : (
         <Container>
-          <BackButton />
           <Content>
+            <BackButton />
             <ShopProductCard {...product} />
             <InfoWrapper>
               <FeaturesContainer>

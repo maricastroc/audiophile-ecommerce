@@ -31,6 +31,6 @@ export const ProductsContainer = styled('div', {
 
   '@media (min-width: 1024px)': {
     maxWidth: '78rem',
-    padding: '0 4.5rem',
+    padding: '0 6rem',
   },
 })

@@ -27,6 +27,7 @@ export const Container = styled('div', {
     alignItems: 'space-between',
     justifyContent: 'space-between',
     flexDirection: 'row',
+    gap: '4rem',
 
     '&.left': {
       flexDirection: 'row',

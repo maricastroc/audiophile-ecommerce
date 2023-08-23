@@ -6,7 +6,7 @@ export const Container = styled('div', {
   textAlign: 'left',
   alignItems: 'flex-start',
   width: '100%',
-  margin: '1.5rem auto 0',
+  margin: '0 auto',
 
   img: {
     width: '100%',
@@ -19,21 +19,23 @@ export const Container = styled('div', {
 
   '@media (min-width: 768px)': {
     flexDirection: 'row',
-    gap: '7.8125rem',
     alignItems: 'center',
+    gap: '4.3rem',
     justifyContent: 'space-between',
 
     img: {
-      height: 480,
-      width: 'auto',
+      height: 'auto',
+      width: 'clamp(8rem, 50vw, 20rem)',
       marginBottom: 0,
+      maxWidth: '100%',
     },
   },
 
   '@media (min-width: 1024px)': {
+    gap: '6rem',
     img: {
-      minWidth: '25rem',
-      height: 'auto',
+      width: 'clamp(25rem, 50vw, 32rem)',
+      height: '100%',
     },
   },
 
@@ -87,6 +89,12 @@ export const Heading = styled('h2', {
   lineHeight: '1.9rem',
   margin: '1.5rem 0',
   maxWidth: 180,
+
+  '@media (min-width: 768px)': {
+    fontSize: '$ft_h2',
+    lineHeight: '2.8rem',
+    maxWidth: 320,
+  },
 })
 
 export const Paragraph = styled('p', {

@@ -14,7 +14,7 @@ export const Container = styled('header', {
   },
 
   '@media (min-width: 1024px)': {
-    padding: '0 10rem',
+    padding: '0 6rem',
   },
 })
 
@@ -25,6 +25,7 @@ export const Content = styled('header', {
   width: '100%',
   borderBottom: 'solid 0.8px $gray700',
   padding: '2.2rem 0',
+  margin: '0 auto',
 
   svg: {
     color: '$white',
@@ -40,6 +41,7 @@ export const Content = styled('header', {
   },
 
   '@media (min-width: 768px)': {
+    maxWidth: '69.375rem',
     img: {
       marginLeft: '-30rem',
     },
