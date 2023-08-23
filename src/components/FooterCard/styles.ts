@@ -76,6 +76,7 @@ export const TextContainer = styled('div', {
     h3: {
       fontSize: '$ft_h2',
       maxWidth: '30rem',
+      lineHeight: '2.8rem',
     },
 
     span: {

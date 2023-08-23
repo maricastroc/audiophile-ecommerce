@@ -14,6 +14,10 @@ export const Container = styled('div', {
     textAlign: 'center',
     letterSpacing: 2,
   },
+
+  '@media (min-width: 768px)': {
+    padding: '0.93rem',
+  },
 })
 
 export const PricingBtn = styled('button', {

@@ -38,7 +38,7 @@ export default function ShopProductCard({
     <Container>
       {imageUrl && (
         <Image
-          src={`${imageUrl}${screenType}/image-category-page-preview.jpg`}
+          src={`${imageUrl}${screenType}/image-product.jpg`}
           alt=""
           width={300}
           height={340}

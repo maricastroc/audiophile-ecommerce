@@ -11,14 +11,12 @@ export const ProductsContainer = styled('div', {
   gap: '7.5rem',
 
   '@media (min-width: 768px)': {
-    maxWidth: '69.375rem',
     padding: '7.5rem 2.5rem 0',
   },
 
   '@media (min-width: 1024px)': {
     maxWidth: '78rem',
-    padding: '10rem 4.5rem 0',
-    gap: '10rem',
+    padding: '7.5rem 4.5rem 0',
   },
 })
 

@@ -18,10 +18,10 @@ export function ShopCard({ title, imageUrl }: ShopCardProps) {
   const { handleSetIsNavbarOpen } = useContext(NavbarContext)
 
   const redirectToPath = () => {
+    handleSetIsNavbarOpen(false)
     const basePath = router.basePath
     const path = `${basePath}/products/${title.toLowerCase()}`
     router.push(path)
-    handleSetIsNavbarOpen(false)
   }
 
   return (

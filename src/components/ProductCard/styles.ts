@@ -12,12 +12,14 @@ export const Container = styled('div', {
     width: '100%',
     height: 'auto',
     borderRadius: 8,
+    marginBottom: '2rem',
     maxWidth: 327,
   },
 
   '@media (min-width: 768px)': {
     img: {
       maxWidth: 689,
+      marginBottom: '3.25rem',
     },
   },
 
@@ -36,6 +38,7 @@ export const Container = styled('div', {
 
     img: {
       width: 'clamp(300px, 50%, 540px)',
+      marginBottom: 0,
     },
   },
 })
@@ -55,16 +58,11 @@ export const TextContainer = styled('div', {
 })
 
 export const Label = styled('p', {
-  marginTop: '2rem',
   color: '$orange500',
   fontSize: '$ft_overline',
   letterSpacing: 10,
   fontWeight: 400,
   textTransform: 'uppercase',
-
-  '@media (min-width: 768px)': {
-    marginTop: '3.25rem',
-  },
 })
 
 export const Heading = styled('h2', {
@@ -95,7 +93,7 @@ export const Paragraph = styled('p', {
   },
 
   '@media (min-width: 1024px)': {
-    width: 'clamp(350px, 50%, 570px)',
+    width: 'clamp(340px, 28vw, 430px)',
     marginBottom: '2.5rem',
   },
 })
