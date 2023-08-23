@@ -3,9 +3,11 @@ export interface InTheBoxProps {
   quantity: number
 }
 
-export interface ImagesProps {
+export interface SuggestionProps {
+  name: string
   link: string
-  position: number
+  path: string
+  category: string
 }
 
 export interface ProductInfo {
@@ -19,5 +21,6 @@ export interface ProductInfo {
   price?: number
   features?: string
   inTheBox?: InTheBoxProps[]
-  images?: ImagesProps[]
+  images?: string[]
+  mayAlsoLike?: SuggestionProps[]
 }

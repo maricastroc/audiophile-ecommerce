@@ -33,7 +33,7 @@ export function Header() {
         <FontAwesomeIcon
           icon={faBars}
           className="icon_menu"
-          onClick={handleSetIsNavbarOpen}
+          onClick={() => handleSetIsNavbarOpen()}
         />
         <Image src={LogoSvg} alt="" width={143} onClick={redirectToHome} />
         <LinksContainer>

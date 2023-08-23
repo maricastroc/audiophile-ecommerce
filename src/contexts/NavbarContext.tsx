@@ -2,7 +2,7 @@ import { createContext, ReactNode, useState } from 'react'
 
 interface NavbarContextData {
   isNavbarOpen: boolean
-  handleSetIsNavbarOpen: () => void
+  handleSetIsNavbarOpen: (value?: boolean) => void
   screenType: string
   handleResize: () => void
 }
@@ -21,8 +21,8 @@ export function NavbarContextProvider({
   const [isNavbarOpen, setIsNavbarOpen] = useState(false)
   const [screenType, setScreenType] = useState('mobile')
 
-  function handleSetIsNavbarOpen() {
-    setIsNavbarOpen(!isNavbarOpen)
+  function handleSetIsNavbarOpen(value?: boolean) {
+    value ? setIsNavbarOpen(value) : setIsNavbarOpen(!isNavbarOpen)
   }
 
   function handleResize() {

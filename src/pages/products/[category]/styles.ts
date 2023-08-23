@@ -1,15 +1,9 @@
 import { styled } from '@/styles'
 
-export const Container = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
-})
-
 export const ProductsContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  padding: '7.5rem 1.5rem 8rem',
+  padding: '4rem 1.5rem 8rem',
   justifyContent: 'center',
   alignItems: 'center',
   width: '100%',
@@ -18,7 +12,7 @@ export const ProductsContainer = styled('div', {
 
   '@media (min-width: 768px)': {
     maxWidth: '69.375rem',
-    padding: '10rem 2.5rem 0',
+    padding: '7.5rem 2.5rem 0',
   },
 
   '@media (min-width: 1024px)': {
@@ -31,7 +25,7 @@ export const ProductsContainer = styled('div', {
 export const ShopContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  gap: '5.3rem',
+  gap: '7rem',
   width: '100%',
   marginTop: '8rem',
 

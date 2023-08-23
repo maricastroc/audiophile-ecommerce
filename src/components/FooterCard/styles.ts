@@ -20,7 +20,7 @@ export const Container = styled('div', {
 })
 
 export const ImageContainer = styled('div', {
-  backgroundImage: 'url("./assets/shared/mobile/image-best-gear.jpg")',
+  backgroundImage: 'url("/assets/shared/mobile/image-best-gear.jpg")',
   minHeight: '18rem',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
@@ -29,11 +29,11 @@ export const ImageContainer = styled('div', {
   borderRadius: 8,
 
   '@media (min-width: 768px)': {
-    backgroundImage: 'url("./assets/shared/tablet/image-best-gear.jpg")',
+    backgroundImage: 'url("/assets/shared/tablet/image-best-gear.jpg")',
   },
 
   '@media (min-width: 1024px)': {
-    backgroundImage: 'url("./assets/shared/desktop/image-best-gear.jpg")',
+    backgroundImage: 'url("/assets/shared/desktop/image-best-gear.jpg")',
     width: 'clamp(25.75rem, 35vw, 540px)',
     minHeight: '28.75rem',
   },
@@ -53,7 +53,7 @@ export const TextContainer = styled('div', {
     fontWeight: 700,
     color: '$black',
     textTransform: 'uppercase',
-    lineHeight: '2.8rem',
+    lineHeight: '2.2rem',
   },
 
   span: {

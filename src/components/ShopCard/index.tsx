@@ -21,7 +21,7 @@ export function ShopCard({ title, imageUrl }: ShopCardProps) {
     const basePath = router.basePath
     const path = `${basePath}/products/${title.toLowerCase()}`
     router.push(path)
-    handleSetIsNavbarOpen()
+    handleSetIsNavbarOpen(false)
   }
 
   return (

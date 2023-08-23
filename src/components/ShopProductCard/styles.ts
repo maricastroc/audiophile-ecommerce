@@ -3,10 +3,10 @@ import { styled } from '@/styles'
 export const Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  textAlign: 'center',
-  alignItems: 'center',
+  textAlign: 'left',
+  alignItems: 'flex-start',
   width: '100%',
-  margin: '0 auto',
+  margin: '1.5rem auto 0',
 
   img: {
     width: '100%',
@@ -35,8 +35,8 @@ export const Container = styled('div', {
 export const TextContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  textAlign: 'center',
-  alignItems: 'center',
+  textAlign: 'left',
+  alignItems: 'flex-start',
   width: '100%',
 
   '@media (min-width: 1024px)': {
@@ -47,7 +47,7 @@ export const TextContainer = styled('div', {
 })
 
 export const Label = styled('p', {
-  marginTop: '2rem',
+  marginTop: '1rem',
   color: '$orange500',
   fontSize: '$ft_overline',
   letterSpacing: 10,
@@ -61,10 +61,10 @@ export const Label = styled('p', {
 
 export const Heading = styled('h2', {
   color: '$black',
-  fontSize: '2.25rem',
+  fontSize: 'ft_h4',
   fontWeight: 700,
   textTransform: 'uppercase',
-  lineHeight: '2.8rem',
+  lineHeight: '1.9rem',
   margin: '1.5rem 0',
   maxWidth: 328,
 
@@ -93,8 +93,39 @@ export const Paragraph = styled('p', {
 })
 
 export const Price = styled('p', {
-  opacity: 0.5,
   color: '$black',
   fontSize: '$ft_h6',
   fontWeight: 700,
+  letterSpacing: 1.5,
+  marginBottom: '2.3rem',
+})
+
+export const AddButton = styled('button', {
+  cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '0.93rem',
+  backgroundColor: '$orange500',
+  color: '$white',
+  border: 'none',
+
+  '&:hover': {
+    transition: 'all 200ms',
+    backgroundColor: '$orange300',
+  },
+
+  p: {
+    fontSize: '$ft_subtitle',
+    textTransform: 'uppercase',
+    fontWeight: 700,
+    textAlign: 'center',
+    letterSpacing: 1,
+  },
+})
+
+export const ButtonsContainer = styled('div', {
+  display: 'flex',
+  alignItems: 'stretch',
+  gap: '1rem',
 })

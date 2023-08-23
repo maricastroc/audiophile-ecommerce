@@ -3,7 +3,7 @@ import { styled } from '@/styles'
 export const ShopContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  gap: '5.3rem',
+  gap: '7rem',
   width: '100%',
 
   '@media (min-width: 768px)': {

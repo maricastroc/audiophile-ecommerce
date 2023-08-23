@@ -8,7 +8,7 @@ export const Container = styled('div', {
   alignItems: 'center',
   backgroundColor: '$orange500',
   borderRadius: '8px',
-  backgroundImage: 'url("./assets/home/desktop/pattern-circles.svg")',
+  backgroundImage: 'url("/assets/home/desktop/pattern-circles.svg")',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   backgroundSize: '168%',
@@ -34,7 +34,7 @@ export const Container = styled('div', {
 })
 
 export const ImageContainer = styled('div', {
-  backgroundImage: 'url("./assets/home/mobile/image-speaker-zx9.png")',
+  backgroundImage: 'url("/assets/home/mobile/image-speaker-zx9.png")',
   minWidth: '10.76rem',
   height: '12.9375rem',
   marginTop: '4rem',
@@ -42,11 +42,11 @@ export const ImageContainer = styled('div', {
   backgroundSize: '100%',
 
   '@media (min-width: 768px)': {
-    backgroundImage: 'url("./assets/home/tablet/image-speaker-zx9.png")',
+    backgroundImage: 'url("/assets/home/tablet/image-speaker-zx9.png")',
   },
 
   '@media (min-width: 1024px)': {
-    backgroundImage: 'url("./assets/home/desktop/image-speaker-zx9.png")',
+    backgroundImage: 'url("/assets/home/desktop/image-speaker-zx9.png")',
     minWidth: '25.64rem',
     minHeight: '30.9375rem',
     margin: '5.5rem 0 0 0',
