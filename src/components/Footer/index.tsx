@@ -26,7 +26,9 @@ export function Footer() {
 
   function redirectToPath(path: string) {
     const basePath = router.basePath
-    router.push(`${basePath}${path}`)
+    path === '/'
+      ? router.push(`${basePath}/`)
+      : router.push(`${basePath}/products/${path}`)
   }
 
   return (

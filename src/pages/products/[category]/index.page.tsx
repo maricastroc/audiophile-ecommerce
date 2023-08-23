@@ -1,3 +1,5 @@
+import { ProductsContainer, ShopContainer } from './styles'
+
 import ProductCard from '@/components/ProductCard'
 import { useContext, useEffect } from 'react'
 import { ShopCard } from '@/components/ShopCard'
@@ -5,13 +7,17 @@ import { ProductsHeader } from '@/components/ProductsHeader'
 import { NavbarContext } from '@/contexts/NavbarContext'
 import { Navbar } from '@/components/Navbar'
 import { shopCards } from '@/data/shoppingCards'
-
-import { ProductsContainer, ShopContainer } from '../headphones/styles'
-import { earphonesData } from '@/data/earphonesData'
 import Layout from '@/components/Layout'
+import { useRouter } from 'next/router'
+import { productsData } from '@/data/productsData'
 
-export default function Earphones() {
+export default function Product() {
   const { isNavbarOpen, handleResize } = useContext(NavbarContext)
+
+  const router = useRouter()
+  const { category } = router.query
+
+  const productList = productsData.filter((item) => item.category === category)
 
   useEffect(() => {
     handleResize()
@@ -29,9 +35,9 @@ export default function Earphones() {
         <Navbar />
       ) : (
         <>
-          <ProductsHeader title="Earphones" />
+          <ProductsHeader title={category as string} />
           <ProductsContainer>
-            {earphonesData.map((data, index) => (
+            {productList.map((data, index) => (
               <ProductCard key={index} {...data} />
             ))}
             <ShopContainer>{renderShopCards()}</ShopContainer>

@@ -18,9 +18,11 @@ export default function ProductCard({
   const { screenType } = useContext(NavbarContext)
   const router = useRouter()
 
+  console.log(category)
+
   function redirectToPage() {
     const basePath = router.basePath
-    router.push(`${basePath}/products/${name}`)
+    router.push(`${basePath}/products/${category}/${name}`)
   }
 
   return (
