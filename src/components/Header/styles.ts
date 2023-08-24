@@ -8,6 +8,7 @@ export const Container = styled('header', {
   height: '100%',
   backgroundColor: '$gray900',
   zIndex: 9999,
+  position: 'relative',
 
   '@media (min-width: 768px)': {
     padding: '0 3.5rem',
@@ -33,6 +34,7 @@ export const Content = styled('header', {
 
     '&.icon_shop': {
       fontSize: '1.5rem',
+      position: 'relative',
     },
   },
 

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import Image from 'next/image'
-import { Button } from '@/components/Button'
 import {
   AddButton,
   ButtonsContainer,
@@ -11,11 +10,14 @@ import {
   Price,
   TextContainer,
 } from './styles'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { NavbarContext } from '@/contexts/NavbarContext'
 import { ProductInfo } from '@/types/productTypes'
 import { formattedPrice } from '@/utils/formatPrice'
-import { PriceButton } from '../PriceButton'
+import { QuantityButton } from '../QuantityButton'
+import { ProductsContext } from '@/contexts/ProductsContext'
+import { CheckoutModal } from '../CheckoutModal'
+import * as Dialog from '@radix-ui/react-dialog'
 
 export default function ShopProductCard({
   title,
@@ -25,14 +27,29 @@ export default function ShopProductCard({
   price,
 }: ProductInfo) {
   const { screenType, handleResize } = useContext(NavbarContext)
+  const [quantity, setQuantity] = useState(1)
+  const { handleAddProduct, shopList } = useContext(ProductsContext)
+
+  function handleSetQuantity(type: string) {
+    type === 'add'
+      ? setQuantity((prev) => prev + 1)
+      : setQuantity((prev) => prev - 1)
+  }
+
+  function addProduct() {
+    const productToAdd = {
+      title,
+      imageUrl,
+      price: price!,
+      quantity,
+    }
+
+    handleAddProduct(productToAdd, quantity)
+  }
 
   useEffect(() => {
     handleResize()
   }, [handleResize])
-
-  function handleAddProduct() {
-    console.log('test')
-  }
 
   return (
     <Container>
@@ -50,10 +67,15 @@ export default function ShopProductCard({
         <Paragraph>{description}</Paragraph>
         {price && <Price>{formattedPrice(price)}</Price>}
         <ButtonsContainer>
-          <PriceButton />
-          <AddButton>
-            <p>Add to Cart</p>
-          </AddButton>
+          <QuantityButton onChange={(type) => handleSetQuantity(type)} />
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <AddButton onClick={addProduct}>
+                <p>Add to Cart</p>
+              </AddButton>
+            </Dialog.Trigger>
+            <CheckoutModal />
+          </Dialog.Root>
         </ButtonsContainer>
       </TextContainer>
     </Container>

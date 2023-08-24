@@ -25,11 +25,11 @@ import {
 export function Footer() {
   const router = useRouter()
 
-  function redirectToPath(path: string) {
+  async function redirectToPath(path: string) {
     const basePath = router.basePath
     path === '/'
-      ? router.push(`${basePath}/`)
-      : router.push(`${basePath}/products/${path}`)
+      ? await router.push(`${basePath}/`)
+      : await router.push(`${basePath}/products/${path}`)
   }
 
   return (

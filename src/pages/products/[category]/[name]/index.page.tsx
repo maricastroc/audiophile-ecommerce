@@ -36,14 +36,11 @@ interface ProductDetailsProps {
 export default function ProductDetails({ product }: ProductDetailsProps) {
   const { isNavbarOpen, handleResize, screenType } = useContext(NavbarContext)
 
-  const firstTwoImages = product.images?.slice(0, 2)
-  const thirdImage = product.images?.slice(2)
-
   const router = useRouter()
 
-  function handleGoToProductPage(path: string, category: string) {
+  async function handleGoToProductPage(path: string, category: string) {
     const basePath = router.basePath
-    router.push(`${basePath}/products/${category}/${path}`)
+    await router.push(`${basePath}/products/${category}/${path}`)
   }
 
   useEffect(() => {
@@ -81,27 +78,25 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             </InfoWrapper>
             <ImagesContainer>
               <ImagesWrapper>
-                {firstTwoImages?.map((item, index) => (
-                  <Image
-                    key={item}
-                    alt=""
-                    width={327}
-                    height={174}
-                    src={`/assets/${item}/${screenType}/image-gallery-${
-                      index + 1
-                    }.jpg`}
-                  />
-                ))}
-              </ImagesWrapper>
-              {thirdImage?.map((item) => (
                 <Image
-                  key={item}
                   alt=""
                   width={327}
                   height={174}
-                  src={`/assets/${item}/${screenType}/image-gallery-3.jpg`}
+                  src={`/assets/${product.demoImage}/${screenType}/image-gallery-1.jpg`}
                 />
-              ))}
+                <Image
+                  alt=""
+                  width={327}
+                  height={174}
+                  src={`/assets/${product.demoImage}/${screenType}/image-gallery-2.jpg`}
+                />
+              </ImagesWrapper>
+              <Image
+                alt=""
+                width={327}
+                height={174}
+                src={`/assets/${product.demoImage}/${screenType}/image-gallery-3.jpg`}
+              />
             </ImagesContainer>
             <RecommendContainer>
               <h2>You may also like</h2>

@@ -37,6 +37,7 @@ export const Title = styled('h3', {
 })
 
 export const ShopButton = styled('button', {
+  cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -51,6 +52,12 @@ export const ShopButton = styled('button', {
     color: '$black',
     opacity: 0.5,
     textTransform: 'uppercase',
+
+    '&:hover': {
+      color: '$orange500',
+      opacity: 1,
+      transition: 'all 200ms',
+    },
   },
 
   svg: {

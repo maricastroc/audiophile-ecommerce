@@ -17,11 +17,11 @@ export function ShopCard({ title, imageUrl }: ShopCardProps) {
   const router = useRouter()
   const { handleSetIsNavbarOpen } = useContext(NavbarContext)
 
-  const redirectToPath = () => {
+  async function redirectToPath() {
     handleSetIsNavbarOpen(false)
     const basePath = router.basePath
     const path = `${basePath}/products/${title.toLowerCase()}`
-    router.push(path)
+    await router.push(path)
   }
 
   return (

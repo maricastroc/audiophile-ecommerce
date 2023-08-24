@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { useContext } from 'react'
 import { NavbarContext } from '@/contexts/NavbarContext'
 import { buttonData } from '@/data/buttonData'
+import * as Dialog from '@radix-ui/react-dialog'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -10,21 +11,22 @@ import { ShoppingCart } from 'phosphor-react'
 import LogoSvg from '../../../public/assets/shared/desktop/logo.svg'
 
 import { Container, Content, LinksContainer, PageButton } from './styles'
+import { CheckoutModal } from '../CheckoutModal'
 
 export function Header() {
   const router = useRouter()
   const { handleSetIsNavbarOpen } = useContext(NavbarContext)
 
-  function redirectToPath(path: string) {
+  async function redirectToPath(path: string) {
     const basePath = router.basePath
     path === '/'
-      ? router.push(`${basePath}/`)
-      : router.push(`${basePath}/products/${path}`)
+      ? await router.push(`${basePath}/`)
+      : await router.push(`${basePath}/products/${path}`)
   }
 
-  function redirectToHome() {
+  async function redirectToHome() {
     const basePath = router.basePath
-    router.push(`${basePath}/`)
+    await router.push(`${basePath}/`)
   }
 
   return (
@@ -47,7 +49,12 @@ export function Header() {
             </PageButton>
           ))}
         </LinksContainer>
-        <ShoppingCart className="icon_shop" />
+        <Dialog.Root>
+          <Dialog.Trigger asChild>
+            <ShoppingCart className="icon_shop" />
+          </Dialog.Trigger>
+          <CheckoutModal />
+        </Dialog.Root>
       </Content>
     </Container>
   )

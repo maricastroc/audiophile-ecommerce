@@ -26,7 +26,7 @@ export const Content = styled('div', {
 
   '@media (min-width: 1024px)': {
     maxWidth: '78rem',
-    padding: '6rem',
+    padding: '0 6rem',
   },
 })
 

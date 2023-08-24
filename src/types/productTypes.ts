@@ -21,6 +21,6 @@ export interface ProductInfo {
   price?: number
   features?: string
   inTheBox?: InTheBoxProps[]
-  images?: string[]
+  demoImage?: string
   mayAlsoLike?: SuggestionProps[]
 }

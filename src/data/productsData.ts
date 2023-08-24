@@ -33,11 +33,7 @@ export const productsData = [
         quantity: 1,
       },
     ],
-    images: [
-      'product-yx1-earphones',
-      'product-yx1-earphones',
-      'product-yx1-earphones',
-    ],
+    demoImage: 'product-yx1-earphones',
     mayAlsoLike: [
       {
         name: 'XX99 MARK I',
@@ -69,8 +65,8 @@ export const productsData = [
     price: 2999,
     imageUrl: '/assets/product-xx99-mark-two-headphones/',
     orientation: 'left',
-    features:
-      'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
+    features: `As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.\n
+    From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is includes with a balanced gold connector.`,
     inTheBox: [
       {
         product: 'Headphone unit',
@@ -93,11 +89,7 @@ export const productsData = [
         quantity: 1,
       },
     ],
-    images: [
-      'product-xx99-mark-two-headphones',
-      'product-xx99-mark-two-headphones',
-      'product-xx99-mark-two-headphones',
-    ],
+    demoImage: 'product-xx99-mark-two-headphones',
     mayAlsoLike: [
       {
         name: 'XX99 MARK I',
@@ -129,8 +121,8 @@ export const productsData = [
     price: 1750,
     imageUrl: '/assets/product-xx99-mark-one-headphones/',
     orientation: 'right',
-    features:
-      'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.',
+    features: `As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.\n
+    From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is includes with a balanced gold connector.`,
     inTheBox: [
       {
         product: 'Headphone unit',
@@ -149,11 +141,7 @@ export const productsData = [
         quantity: 1,
       },
     ],
-    images: [
-      'product-xx99-mark-one-headphones',
-      'product-xx99-mark-one-headphones',
-      'product-xx99-mark-one-headphones',
-    ],
+    demoImage: 'product-xx99-mark-one-headphones',
     mayAlsoLike: [
       {
         name: 'XX99 MARK II',
@@ -185,8 +173,8 @@ export const productsData = [
     price: 899,
     imageUrl: '/assets/product-xx59-headphones/',
     orientation: 'left',
-    features:
-      'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.',
+    features: `These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.\n
+    More than a simple pair of headphones, this headset features a pair of built-in microphones for clear, hands-free calling when paired with a compatible smartphone. Controlling music and calls is also intuitive thanks to easy-access touch buttons on the earcups. Regardless of how you use the XX59 headphones, you can do so all day thanks to an impressive 30-hour battery life that can be rapidly recharged via USB-C.`,
     inTheBox: [
       {
         product: 'Headphone unit',
@@ -205,11 +193,7 @@ export const productsData = [
         quantity: 1,
       },
     ],
-    images: [
-      'product-xx59-headphones',
-      'product-xx59-headphones',
-      'product-xx59-headphones',
-    ],
+    demoImage: 'product-xx59-headphones',
     mayAlsoLike: [
       {
         name: 'XX99 MARK II',
@@ -241,8 +225,8 @@ export const productsData = [
     price: 4500,
     imageUrl: '/assets/product-zx9-speaker/',
     orientation: 'left',
-    features:
-      'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.',
+    features: `Connect via Bluetooth or nearly any wired source. This speaker features optical, digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs, allowing you to have up to five wired source devices connected for easy switching. Improved bluetooth technology offers near lossless audio quality at up to 328ft (100m).\n
+    Discover clear, more natural sounding highs than the competition with ZX9’s signature planar diaphragm tweeter. Equally important is its powerful room-shaking bass courtesy of a 6.5” aluminum alloy bass unit. You’ll be able to enjoy equal sound quality whether in a large room or small den. Furthermore, you will experience new sensations from old songs since it can respond to even the subtle waveforms.`,
     inTheBox: [
       {
         product: 'Speaker unit',
@@ -265,11 +249,7 @@ export const productsData = [
         quantity: 1,
       },
     ],
-    images: [
-      'product-zx9-speaker',
-      'product-zx9-speaker',
-      'product-zx9-speaker',
-    ],
+    demoImage: 'product-zx9-speaker',
     mayAlsoLike: [
       {
         name: 'ZX7 Speaker',
@@ -325,11 +305,7 @@ export const productsData = [
         quantity: 1,
       },
     ],
-    images: [
-      'product-zx7-speaker',
-      'product-zx7-speaker',
-      'product-zx7-speaker',
-    ],
+    demoImage: 'product-zx7-speaker',
     mayAlsoLike: [
       {
         name: 'ZX9 Speaker',
