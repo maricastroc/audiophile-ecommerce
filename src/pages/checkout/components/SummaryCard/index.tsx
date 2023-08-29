@@ -1,4 +1,8 @@
 import { useContext } from 'react'
+import { ProductsContext } from '@/contexts/ProductsContext'
+import Image from 'next/image'
+import { formattedPrice } from '@/utils/formatPrice'
+
 import {
   Container,
   Heading,
@@ -11,9 +15,6 @@ import {
   Quantity,
   TotalItem,
 } from './styles'
-import { ProductsContext } from '@/contexts/ProductsContext'
-import Image from 'next/image'
-import { formattedPrice } from '@/utils/formatPrice'
 
 export function SummaryCard() {
   const { shopList, calculateTotalPrice } = useContext(ProductsContext)

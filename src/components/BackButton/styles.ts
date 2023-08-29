@@ -9,11 +9,26 @@ export const Container = styled('button', {
   fontSize: '$ft_body',
   opacity: 0.5,
   color: '$black',
+  cursor: 'pointer',
 
   svg: {
     color: '$black',
     fontSize: '1rem',
     marginTop: '0.1rem',
+  },
+
+  '&:focus': {
+    boxShadow: 'none',
+  },
+
+  '&:hover': {
+    color: '$orange500',
+    opacity: 1,
+    transition: 'all 200ms',
+
+    svg: {
+      color: '$orange500',
+    },
   },
 
   '@media (min-width: 768px)': {

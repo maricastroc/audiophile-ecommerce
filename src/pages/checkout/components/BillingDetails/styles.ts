@@ -41,6 +41,12 @@ export const Item = styled('div', {
   justifyContent: 'center',
   gap: '0.6rem',
   width: '100%',
+
+  '@media (min-width: 768px)': {
+    '&.phone': {
+      width: '50%',
+    },
+  },
 })
 
 export const Input = styled('input', {

@@ -34,7 +34,7 @@ export const {
       ft_h4: '1.75rem',
       ft_h5: '1.5rem',
       ft_h6: '1.125rem',
-      ft_body: '0.9375rem',
+      ft_body: '0.93rem',
       ft_overline: '0.875rem',
       ft_subtitle: '0.8125rem',
     },

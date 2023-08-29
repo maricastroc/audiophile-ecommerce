@@ -1,6 +1,6 @@
 import { styled } from '@/styles'
 
-export const Container = styled('form', {
+export const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
@@ -8,13 +8,27 @@ export const Container = styled('form', {
   margin: '0 auto',
 
   '@media (min-width: 768px)': {
-    maxWidth: '69.375rem',
     padding: '0 2.5rem',
+    maxWidth: '69.375rem',
   },
 
   '@media (min-width: 1024px)': {
-    maxWidth: '78rem',
     padding: '0 6rem',
+    maxWidth: '78rem',
+  },
+})
+
+export const Container = styled('form', {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
+  margin: '0 auto',
+
+  '@media (min-width: 1200px)': {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    padding: '0 0 8.8125rem',
+    gap: '1.875rem',
   },
 })
 
@@ -28,6 +42,12 @@ export const CheckoutForm = styled('div', {
   borderRadius: 8,
   margin: '0 auto',
   backgroundColor: '$white',
+
+  '@media (min-width: 1200px)': {
+    width: '70%',
+    flex: 1,
+    padding: '3.5rem 3rem',
+  },
 })
 
 export const Heading = styled('h2', {
@@ -134,6 +154,12 @@ export const SummaryContainer = styled('div', {
   width: '100%',
   padding: '1.5rem',
   borderRadius: 8,
-  margin: '0 auto 6.06rem',
+  margin: '2rem auto 6.06rem',
   backgroundColor: '$white',
+
+  '@media (min-width: 1200px)': {
+    width: '30%',
+    margin: '0 auto 6.06rem',
+    padding: '2.06rem',
+  },
 })

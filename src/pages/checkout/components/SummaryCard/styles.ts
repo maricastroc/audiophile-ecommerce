@@ -14,6 +14,7 @@ export const Heading = styled('h2', {
   fontWeight: 700,
   fontSize: '$ft_h6',
   textTransform: 'uppercase',
+  letterSpacing: 1,
 })
 
 export const ProductsWrapper = styled('div', {

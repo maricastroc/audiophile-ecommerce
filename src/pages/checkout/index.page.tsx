@@ -1,22 +1,25 @@
+import { useContext } from 'react'
+import { NavbarContext } from '@/contexts/NavbarContext'
+import { FieldError, UseFormRegister, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+
 import Layout from '@/components/Layout'
+import { Navbar } from '@/components/Navbar'
+import { BackButton } from '@/components/BackButton'
+import { BillingDetails } from './components/BillingDetails'
+import { ShippingInfo } from './components/ShippingInfo'
+import { PaymentDetails } from './components/PaymentDetails'
+import { SummaryCard } from './components/SummaryCard'
+
 import {
   CheckoutButton,
   CheckoutForm,
   Container,
   Heading,
   SummaryContainer,
+  Wrapper,
 } from './styles'
-import { NavbarContext } from '@/contexts/NavbarContext'
-import { useContext } from 'react'
-import { Navbar } from '@/components/Navbar'
-import { BackButton } from '@/components/BackButton'
-import { z } from 'zod'
-import { FieldError, UseFormRegister, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { BillingDetails } from './components/BillingDetails'
-import { ShippingInfo } from './components/ShippingInfo'
-import { PaymentDetails } from './components/PaymentDetails'
-import { SummaryCard } from './components/SummaryCard'
 
 const formSchema = z
   .object({
@@ -79,32 +82,32 @@ export default function Checkout() {
     setValue('payment', method)
   }
 
-  console.log(errors)
-
   return (
     <Layout showFooterCard={false}>
       {isNavbarOpen ? (
         <Navbar />
       ) : (
-        <Container onSubmit={handleSubmit(handleCheckout)}>
+        <Wrapper>
           <BackButton />
-          <CheckoutForm>
-            <Heading>Checkout</Heading>
-            <BillingDetails register={register} errors={errors} />
-            <ShippingInfo register={register} errors={errors} />
-            <PaymentDetails
-              register={register}
-              errors={errors}
-              onChange={handleSelectPaymentMethod}
-            />
-          </CheckoutForm>
-          <SummaryContainer>
-            <SummaryCard />
-            <CheckoutButton type="submit" disabled={isSubmitting}>
-              Continue & pay
-            </CheckoutButton>
-          </SummaryContainer>
-        </Container>
+          <Container onSubmit={handleSubmit(handleCheckout)}>
+            <CheckoutForm>
+              <Heading>Checkout</Heading>
+              <BillingDetails register={register} errors={errors} />
+              <ShippingInfo register={register} errors={errors} />
+              <PaymentDetails
+                register={register}
+                errors={errors}
+                onChange={handleSelectPaymentMethod}
+              />
+            </CheckoutForm>
+            <SummaryContainer>
+              <SummaryCard />
+              <CheckoutButton type="submit" disabled={isSubmitting}>
+                Continue & pay
+              </CheckoutButton>
+            </SummaryContainer>
+          </Container>
+        </Wrapper>
       )}
     </Layout>
   )
