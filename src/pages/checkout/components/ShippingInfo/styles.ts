@@ -10,10 +10,6 @@ export const FormWrapper = styled('div', {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-
-    div: {
-      marginTop: 0,
-    },
   },
 })
 
@@ -41,6 +37,12 @@ export const Item = styled('div', {
   justifyContent: 'center',
   gap: '0.6rem',
   width: '100%',
+
+  '@media (min-width: 768px)': {
+    '&.country': {
+      width: '50%',
+    },
+  },
 })
 
 export const Input = styled('input', {
