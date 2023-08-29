@@ -1,17 +1,19 @@
 import {
-  EMoneyContainer,
   FormContainer,
   FormError,
   FormInput,
   FormItem,
   FormLabel,
   FormTitle,
-  PaymentItem,
-  PaymentTitle,
-  PaymentsContainer,
 } from '../../styles'
 import { FormItemProps } from '../../index.page'
 import { useState } from 'react'
+import {
+  EMoneyContainer,
+  PaymentItem,
+  PaymentTitle,
+  PaymentsContainer,
+} from './styles'
 
 type PaymentDetailsProps = FormItemProps & {
   onChange: (method: string) => void

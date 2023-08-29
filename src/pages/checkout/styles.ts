@@ -42,6 +42,7 @@ export const FormContainer = styled('div', {
   alignItems: 'flex-start',
   justifyContent: 'center',
   width: '100%',
+  gap: '1.5rem',
 })
 
 export const FormTitle = styled('h3', {
@@ -49,7 +50,7 @@ export const FormTitle = styled('h3', {
   fontSize: '$ft_subtitle',
   textTransform: 'uppercase',
   letterSpacing: 1,
-  margin: '2.8rem 0 1.5rem',
+  margin: '2.8rem 0 0',
 })
 
 export const FormItem = styled('div', {
@@ -59,16 +60,12 @@ export const FormItem = styled('div', {
   justifyContent: 'center',
   gap: '0.6rem',
   width: '100%',
-
-  '& + &': {
-    marginTop: '1.5rem',
-  },
 })
 
 export const FormInput = styled('input', {
   padding: '1.125rem 1.5rem',
   backgroundColor: 'transparent',
-  border: '1px solid $gray300',
+  border: '1px solid $gray200',
   borderRadius: 8,
   fontSize: '$ft_overline',
   width: '100%',
@@ -95,83 +92,6 @@ export const FormError = styled('p', {
   fontSize: '0.75rem',
   color: '$red500',
   marginTop: '-0.2rem',
-})
-
-export const PaymentsContainer = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
-  width: '100%',
-})
-
-export const PaymentTitle = styled('p', {
-  fontSize: '0.75rem',
-  fontWeight: 700,
-  marginBottom: '1rem',
-
-  '&.error': {
-    color: '$red500',
-  },
-})
-
-export const PaymentItem = styled('div', {
-  display: 'flex',
-  gap: '1rem',
-  alignItems: 'center',
-  justifyContent: 'flex-start',
-  padding: '1.125rem 1rem',
-  backgroundColor: 'transparent',
-  border: '1px solid $gray300',
-  borderRadius: 8,
-  width: '100%',
-
-  '&.checked': {
-    border: '2px solid $orange500',
-  },
-
-  '> label': {
-    fontWeight: 700,
-    fontSize: '$ft_overline',
-  },
-
-  '> input': {
-    position: 'relative',
-    appearance: 'none',
-    width: '1rem',
-    height: '1rem',
-    color: 'transparent',
-    backgroundColor: 'transparent',
-    border: '1px solid $gray300',
-    borderRadius: '50%',
-
-    '&:focus': {
-      boxShadow: 'none',
-    },
-
-    '&.checked': {
-      border: '1px solid $orange500',
-
-      '&:before': {
-        position: 'absolute',
-        content: '',
-        display: 'block',
-        width: 8,
-        height: 8,
-        backgroundColor: '$orange500',
-        borderRadius: '50%',
-        top: 3,
-        left: 3,
-      },
-    },
-  },
-})
-
-export const EMoneyContainer = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  width: '100%',
-  marginTop: '2rem',
 })
 
 export const CheckoutButton = styled('button', {

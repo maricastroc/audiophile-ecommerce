@@ -7,31 +7,34 @@ import {
   FormTitle,
 } from '../../styles'
 import { FormItemProps } from '../../index.page'
+import { Wrapper } from './styles'
 
 export function BillingDetails({ register, errors }: FormItemProps) {
   return (
     <FormContainer>
       <FormTitle>Billing details</FormTitle>
-      <FormItem>
-        <FormLabel className={errors.name ? 'error' : ''}>Name</FormLabel>
-        <FormInput
-          type="text"
-          placeholder="Alexei Ward"
-          {...register('name')}
-        />
-        {errors.name && <FormError>{errors.name.message}</FormError>}
-      </FormItem>
-      <FormItem>
-        <FormLabel className={errors.email ? 'error' : ''}>
-          Email Address
-        </FormLabel>
-        <FormInput
-          type="email"
-          placeholder="alexei@mail.com"
-          {...register('email')}
-        />
-        {errors.email && <FormError>{errors.email.message}</FormError>}
-      </FormItem>
+      <Wrapper>
+        <FormItem>
+          <FormLabel className={errors.name ? 'error' : ''}>Name</FormLabel>
+          <FormInput
+            type="text"
+            placeholder="Alexei Ward"
+            {...register('name')}
+          />
+          {errors.name && <FormError>{errors.name.message}</FormError>}
+        </FormItem>
+        <FormItem>
+          <FormLabel className={errors.email ? 'error' : ''}>
+            Email Address
+          </FormLabel>
+          <FormInput
+            type="email"
+            placeholder="alexei@mail.com"
+            {...register('email')}
+          />
+          {errors.email && <FormError>{errors.email.message}</FormError>}
+        </FormItem>
+      </Wrapper>
       <FormItem>
         <FormLabel className={errors.phone ? 'error' : ''}>
           Phone Number
