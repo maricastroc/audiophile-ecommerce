@@ -28,6 +28,7 @@ export const Content = styled(RadixContent, {
   width: 'clamp(320px, 90vw, 24rem)',
   borderRadius: '4px',
   zIndex: 9999,
+  overflowY: 'auto',
 
   '&:focus': {
     boxShadow: 'none',

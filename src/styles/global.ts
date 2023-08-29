@@ -16,6 +16,7 @@ export const globalStyles = globalCss({
     backgroundColor: '$gray100',
     color: '$black',
     minHeight: '100vh',
+    overflowY: 'scroll',
   },
 
   'body, input, textarea, button': {

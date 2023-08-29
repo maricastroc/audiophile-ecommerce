@@ -6,6 +6,7 @@ export const Wrapper = styled('div', {
   width: '100%',
   padding: '0 1.5rem',
   margin: '0 auto',
+  position: 'relative',
 
   '@media (min-width: 768px)': {
     padding: '0 2.5rem',

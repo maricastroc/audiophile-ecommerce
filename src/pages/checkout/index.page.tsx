@@ -1,8 +1,9 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { NavbarContext } from '@/contexts/NavbarContext'
 import { FieldError, UseFormRegister, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import * as Dialog from '@radix-ui/react-dialog'
 
 import Layout from '@/components/Layout'
 import { Navbar } from '@/components/Navbar'
@@ -20,6 +21,7 @@ import {
   SummaryContainer,
   Wrapper,
 } from './styles'
+import { ConfirmationModal } from '@/components/ConfirmationModal'
 
 const formSchema = z
   .object({
@@ -64,6 +66,7 @@ export interface FormItemProps {
 
 export default function Checkout() {
   const { isNavbarOpen } = useContext(NavbarContext)
+  const [openConfirmationBox, setOpenConfirmationBox] = useState(false)
 
   const {
     register,
@@ -82,12 +85,17 @@ export default function Checkout() {
     setValue('payment', method)
   }
 
+  function handleCloseConfirmationBox() {
+    openConfirmationBox && setOpenConfirmationBox(false)
+  }
+
   return (
     <Layout showFooterCard={false}>
       {isNavbarOpen ? (
         <Navbar />
       ) : (
-        <Wrapper>
+        <Wrapper onClick={handleCloseConfirmationBox}>
+          {openConfirmationBox && <ConfirmationModal />}
           <BackButton />
           <Container onSubmit={handleSubmit(handleCheckout)}>
             <CheckoutForm>
@@ -102,7 +110,11 @@ export default function Checkout() {
             </CheckoutForm>
             <SummaryContainer>
               <SummaryCard />
-              <CheckoutButton type="submit" disabled={isSubmitting}>
+              <CheckoutButton
+                type="submit"
+                disabled={isSubmitting}
+                onClick={() => setOpenConfirmationBox(true)}
+              >
                 Continue & pay
               </CheckoutButton>
             </SummaryContainer>
