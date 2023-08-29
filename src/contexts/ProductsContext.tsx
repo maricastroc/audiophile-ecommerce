@@ -5,6 +5,9 @@ interface ProductsContextData {
   shopList: ShopProductInfo[]
   handleAddProduct: (product: ShopProductInfo, quantity: number) => void
   handleRemoveProduct: (product: ShopProductInfo, quantity: number) => void
+  handleClearShopList: (list: ShopProductInfo[]) => void
+  calculateTotalPrice: () => number
+  calculateProductsQuantity: () => number
 }
 
 export const ProductsContext = createContext<ProductsContextData>(
@@ -80,10 +83,33 @@ export function ProductsContextProvider({
     }
   }
 
+  function handleClearShopList() {
+    setShopList([])
+  }
+
+  function calculateTotalPrice() {
+    const total = shopList.reduce((accumulator, item) => {
+      return accumulator + item.price * item.quantity
+    }, 0)
+
+    return total
+  }
+
+  function calculateProductsQuantity() {
+    const total = shopList.reduce((accumulator, item) => {
+      return accumulator + item.quantity
+    }, 0)
+
+    return total
+  }
+
   const ProductsContextValue: ProductsContextData = {
     shopList,
     handleAddProduct,
     handleRemoveProduct,
+    handleClearShopList,
+    calculateTotalPrice,
+    calculateProductsQuantity,
   }
 
   return (

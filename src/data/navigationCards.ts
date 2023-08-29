@@ -1,4 +1,4 @@
-export const shopCards = [
+export const navigationCards = [
   {
     title: 'Headphones',
     imageUrl: '/assets/shared/desktop/image-category-thumbnail-headphones.png',

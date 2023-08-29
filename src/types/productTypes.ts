@@ -12,6 +12,7 @@ export interface SuggestionProps {
 
 export interface ProductInfo {
   title: string
+  abbreviation: string
   description: string
   imageUrl: string
   newProduct: boolean

@@ -1,8 +1,8 @@
 import { useContext, useEffect } from 'react'
 import { NavbarContext } from '@/contexts/NavbarContext'
-import { shopCards } from '@/data/shoppingCards'
+import { navigationCards } from '@/data/navigationCards'
 
-import { ShopCard } from '@/components/ShopCard'
+import { NavigationCard } from '@/components/NavigationCard'
 import { Zx9SpeakerCard } from './components/Zx9SpeakerCard'
 import { Zx7SpeakerCard } from './components/Zx7SpeakerCard'
 import { Earphones } from './components/Earphones'
@@ -28,8 +28,8 @@ export default function Home() {
           <HeadphonesCard />
           <ProductsContainer>
             <ShopContainer>
-              {shopCards.map((card, index) => (
-                <ShopCard
+              {navigationCards.map((card, index) => (
+                <NavigationCard
                   key={index}
                   title={card.title}
                   imageUrl={card.imageUrl}

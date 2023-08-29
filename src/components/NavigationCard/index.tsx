@@ -8,12 +8,12 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 import { Container, ShopButton, Title } from './styles'
 
-interface ShopCardProps {
+interface NavigationCardProps {
   title: string
   imageUrl: string
 }
 
-export function ShopCard({ title, imageUrl }: ShopCardProps) {
+export function NavigationCard({ title, imageUrl }: NavigationCardProps) {
   const router = useRouter()
   const { handleSetIsNavbarOpen } = useContext(NavbarContext)
 

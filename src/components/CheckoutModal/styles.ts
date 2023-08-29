@@ -57,6 +57,10 @@ export const RemoveButton = styled('button', {
   backgroundColor: 'transparent',
   cursor: 'pointer',
   textDecoration: 'underline',
+
+  '&:focus': {
+    boxShadow: 'none',
+  },
 })
 
 export const Description = styled(RadixDescription, {
@@ -91,17 +95,40 @@ export const CloseButton = styled(RadixClose, {
   cursor: 'pointer',
   width: '100%',
   textTransform: 'uppercase',
+
+  variants: {
+    disabled: {
+      true: {
+        cursor: 'not-allowed',
+        backgroundColor: '$gray500',
+      },
+    },
+  },
+
+  '&:not(:disabled):hover': {
+    backgroundColor: '$orange300',
+    transition: 'all 200ms',
+  },
 })
 
-export const ButtonsContainer = styled('div', {
+export const TotalContainer = styled('div', {
   display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
+  width: '100%',
+  marginTop: '2rem',
 
-  '@media (min-width: 480px)': {
-    alignItems: 'center',
-    justifyContent: 'center',
+  p: {
+    fontSize: '$ft_body',
+    color: '$black',
+    opacity: 0.5,
+    textTransform: 'uppercase',
+  },
+
+  span: {
+    fontSize: '$ft_h6',
+    color: '$black',
+    textTransform: 'uppercase',
+    fontWeight: 700,
   },
 })

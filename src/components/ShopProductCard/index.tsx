@@ -22,13 +22,14 @@ import * as Dialog from '@radix-ui/react-dialog'
 export default function ShopProductCard({
   title,
   description,
+  abbreviation,
   newProduct,
   imageUrl,
   price,
 }: ProductInfo) {
   const { screenType, handleResize } = useContext(NavbarContext)
   const [quantity, setQuantity] = useState(1)
-  const { handleAddProduct, shopList } = useContext(ProductsContext)
+  const { handleAddProduct } = useContext(ProductsContext)
 
   function handleSetQuantity(type: string) {
     type === 'add'
@@ -40,6 +41,7 @@ export default function ShopProductCard({
     const productToAdd = {
       title,
       imageUrl,
+      abbreviation,
       price: price!,
       quantity,
     }

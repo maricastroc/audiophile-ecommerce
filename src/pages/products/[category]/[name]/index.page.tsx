@@ -25,8 +25,8 @@ import {
 import { BackButton } from '@/components/BackButton'
 import { Button } from '@/components/Button'
 import { useRouter } from 'next/router'
-import { ShopCard } from '@/components/ShopCard'
-import { shopCards } from '@/data/shoppingCards'
+import { NavigationCard } from '@/components/NavigationCard'
+import { navigationCards } from '@/data/navigationCards'
 import { ShopContainer } from '../styles'
 
 interface ProductDetailsProps {
@@ -124,8 +124,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               </RecommendContent>
             </RecommendContainer>
             <ShopContainer>
-              {shopCards.map((card, index) => (
-                <ShopCard
+              {navigationCards.map((card, index) => (
+                <NavigationCard
                   key={index}
                   title={card.title}
                   imageUrl={card.imageUrl}

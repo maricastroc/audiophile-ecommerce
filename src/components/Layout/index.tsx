@@ -6,16 +6,19 @@ import { Container, FooterContainer } from './styles'
 
 interface LayoutProps {
   children: ReactNode
+  showFooterCard?: boolean
 }
 
-function Layout({ children }: LayoutProps) {
+function Layout({ children, showFooterCard = true }: LayoutProps) {
   return (
     <Container>
       <Header />
       {children}
-      <FooterContainer>
-        <FooterCard />
-      </FooterContainer>
+      {showFooterCard && (
+        <FooterContainer>
+          <FooterCard />
+        </FooterContainer>
+      )}
       <Footer />
     </Container>
   )

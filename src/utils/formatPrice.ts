@@ -4,5 +4,7 @@ export function formattedPrice(priceInDollars: number) {
     currency: 'USD',
   })
 
-  return formattedPrice
+  const withoutTrailingZeros = formattedPrice.replace(/\.00$/, '')
+
+  return withoutTrailingZeros
 }

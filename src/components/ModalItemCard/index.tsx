@@ -19,7 +19,7 @@ export function ModalItemCard({ data }: ModalItemCardProps) {
           src={`${data.imageUrl}mobile/image-product.jpg`}
         />
         <ModalItemText>
-          <p>{data.title}</p>
+          <p>{data.abbreviation}</p>
           <span>{formattedPrice(data.price)}</span>
         </ModalItemText>
       </ModalItemInfo>

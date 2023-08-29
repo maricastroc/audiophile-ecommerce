@@ -23,9 +23,12 @@ export const Content = styled('div', {
   flexDirection: 'column',
   width: '100%',
   margin: '0 auto',
+  justifyContent: 'center',
+  alignItems: 'center',
 
   '@media (min-width: 768px)': {
     maxWidth: '69.375rem',
+    alignItems: 'flex-start',
   },
 })
 

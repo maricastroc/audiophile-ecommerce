@@ -1,12 +1,16 @@
-import { shopCards } from '@/data/shoppingCards'
-import { ShopCard } from '../ShopCard'
+import { navigationCards } from '@/data/navigationCards'
+import { NavigationCard } from '../NavigationCard'
 import { Container } from './styles'
 
 export function Navbar() {
   return (
     <Container>
-      {shopCards.map((card, index) => (
-        <ShopCard key={index} title={card.title} imageUrl={card.imageUrl} />
+      {navigationCards.map((card, index) => (
+        <NavigationCard
+          key={index}
+          title={card.title}
+          imageUrl={card.imageUrl}
+        />
       ))}
     </Container>
   )
