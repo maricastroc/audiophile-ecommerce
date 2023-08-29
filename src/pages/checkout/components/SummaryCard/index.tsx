@@ -15,6 +15,7 @@ import {
   Quantity,
   TotalItem,
 } from './styles'
+import { calculateFinalPrice } from '@/utils/calculateFinalPrice'
 
 export function SummaryCard() {
   const { shopList, calculateTotalPrice } = useContext(ProductsContext)
@@ -23,7 +24,7 @@ export function SummaryCard() {
 
   const vat = (totalPrice * 20) / 100
 
-  const total = vat + totalPrice + 50
+  const total = calculateFinalPrice(totalPrice)
 
   return (
     <Container>

@@ -86,14 +86,22 @@ export function PaymentDetails({
             <EMoneyContainer>
               <FormItem>
                 <FormLabel>e-Money Number</FormLabel>
-                <FormInput type="number" placeholder="238521993" />
+                <FormInput
+                  type="number"
+                  placeholder="238521993"
+                  {...register('eMoneyNumber')}
+                />
                 {hasEMoneyNumberError && (
                   <FormError>{errors?.eMoneyNumber?.message}</FormError>
                 )}
               </FormItem>
               <FormItem>
                 <FormLabel>e-Money PIN</FormLabel>
-                <FormInput type="number" placeholder="6891" />
+                <FormInput
+                  type="number"
+                  placeholder="6891"
+                  {...register('eMoneyPIN')}
+                />
                 {hasEMoneyPINError && (
                   <FormError>{errors?.eMoneyPIN?.message}</FormError>
                 )}

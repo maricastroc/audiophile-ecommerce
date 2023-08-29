@@ -5,7 +5,7 @@ interface ProductsContextData {
   shopList: ShopProductInfo[]
   handleAddProduct: (product: ShopProductInfo, quantity: number) => void
   handleRemoveProduct: (product: ShopProductInfo, quantity: number) => void
-  handleClearShopList: (list: ShopProductInfo[]) => void
+  handleClearShopList: () => void
   calculateTotalPrice: () => number
   calculateProductsQuantity: () => number
 }

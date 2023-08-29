@@ -3,7 +3,6 @@ import { NavbarContext } from '@/contexts/NavbarContext'
 import { FieldError, UseFormRegister, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import * as Dialog from '@radix-ui/react-dialog'
 
 import Layout from '@/components/Layout'
 import { Navbar } from '@/components/Navbar'
@@ -78,15 +77,16 @@ export default function Checkout() {
   })
 
   function handleCheckout(data: FormData) {
-    console.log(data)
+    if (Object.keys(errors).length === 0) {
+      console.log('All fields are valid:', data)
+      setOpenConfirmationBox(true)
+    } else {
+      console.log('There are errors in the form:', errors)
+    }
   }
 
   function handleSelectPaymentMethod(method: string) {
     setValue('payment', method)
-  }
-
-  function handleCloseConfirmationBox() {
-    openConfirmationBox && setOpenConfirmationBox(false)
   }
 
   return (
@@ -94,7 +94,7 @@ export default function Checkout() {
       {isNavbarOpen ? (
         <Navbar />
       ) : (
-        <Wrapper onClick={handleCloseConfirmationBox}>
+        <Wrapper>
           {openConfirmationBox && <ConfirmationModal />}
           <BackButton />
           <Container onSubmit={handleSubmit(handleCheckout)}>
@@ -110,11 +110,7 @@ export default function Checkout() {
             </CheckoutForm>
             <SummaryContainer>
               <SummaryCard />
-              <CheckoutButton
-                type="submit"
-                disabled={isSubmitting}
-                onClick={() => setOpenConfirmationBox(true)}
-              >
+              <CheckoutButton type="submit" disabled={isSubmitting}>
                 Continue & pay
               </CheckoutButton>
             </SummaryContainer>

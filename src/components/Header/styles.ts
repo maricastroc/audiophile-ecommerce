@@ -7,7 +7,7 @@ export const Container = styled('header', {
   padding: '0 1.5rem',
   height: '100%',
   backgroundColor: '$gray900',
-  zIndex: 9999,
+  zIndex: 9997,
   position: 'relative',
 
   '@media (min-width: 768px)': {

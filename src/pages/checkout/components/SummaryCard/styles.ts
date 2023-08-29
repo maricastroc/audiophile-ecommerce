@@ -24,6 +24,7 @@ export const ProductsWrapper = styled('div', {
   justifyContent: 'center',
   flexDirection: 'column',
   width: '100%',
+  gap: '1.5rem',
 })
 
 export const ProductContainer = styled('div', {

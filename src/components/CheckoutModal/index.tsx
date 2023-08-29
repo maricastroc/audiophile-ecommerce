@@ -39,7 +39,7 @@ export function CheckoutModal() {
       <Content className="DialogContent">
         <Title className="DialogTitle">
           <h3>{`Cart (${productsQuantity})`}</h3>
-          <RemoveButton onClick={() => handleClearShopList(shopList)}>
+          <RemoveButton onClick={() => handleClearShopList()}>
             Remove all
           </RemoveButton>
         </Title>
