@@ -2,7 +2,7 @@ import { ProductInfo } from '@/types/productTypes'
 import { Container, Wrapper, Product } from './styles'
 import Image from 'next/image'
 import { Button } from '@/components/Button'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { NavbarContext } from '@/contexts/NavbarContext'
 import { useRouter } from 'next/router'
 
@@ -12,11 +12,16 @@ interface RelatedProductProps {
 
 export function RelatedProduct({ product }: RelatedProductProps) {
   const { screenType } = useContext(NavbarContext)
+  const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
   async function handleGoToProductPage(path: string, category: string) {
+    setIsLoading(true)
+
     const basePath = router.basePath
     await router.push(`${basePath}/products/${category}/${path}`)
+
+    setIsLoading(false)
   }
 
   return (
@@ -33,7 +38,7 @@ export function RelatedProduct({ product }: RelatedProductProps) {
               />
               <h3>{item.name}</h3>
               <Button
-                title="See Product"
+                title={isLoading ? 'Loading...' : 'See Product'}
                 type="primary"
                 onClick={() => handleGoToProductPage(item.path, item.category)}
               />
