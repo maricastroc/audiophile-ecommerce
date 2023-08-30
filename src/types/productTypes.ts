@@ -3,7 +3,7 @@ export interface InTheBoxProps {
   quantity: number
 }
 
-export interface SuggestionProps {
+export interface RelatedProps {
   name: string
   link: string
   path: string
@@ -23,5 +23,5 @@ export interface ProductInfo {
   features?: string
   itemsInTheBox?: InTheBoxProps[]
   demoImageUrl?: string
-  relatedProducts?: SuggestionProps[]
+  relatedProducts?: RelatedProps[]
 }

@@ -22,6 +22,7 @@ import {
 } from './styles'
 import { ConfirmationModal } from '@/components/ConfirmationModal'
 import { ProductsContext } from '@/contexts/ProductsContext'
+import { NextSeo } from 'next-seo'
 
 const formSchema = z
   .object({
@@ -94,36 +95,39 @@ export default function Checkout() {
   }
 
   return (
-    <Layout showFooterCard={false}>
-      {isNavbarOpen ? (
-        <Navbar />
-      ) : (
-        <Wrapper>
-          {openConfirmationBox && <ConfirmationModal />}
-          <BackButton />
-          <Container onSubmit={handleSubmit(handleCheckout)}>
-            <CheckoutForm>
-              <Heading>Checkout</Heading>
-              <BillingDetails register={register} errors={errors} />
-              <ShippingInfo register={register} errors={errors} />
-              <PaymentDetails
-                register={register}
-                errors={errors}
-                onChange={handleSelectPaymentMethod}
-              />
-            </CheckoutForm>
-            <SummaryContainer>
-              <SummaryCard />
-              <CheckoutButton
-                type="submit"
-                disabled={isSubmitting || emptyList}
-              >
-                Continue & pay
-              </CheckoutButton>
-            </SummaryContainer>
-          </Container>
-        </Wrapper>
-      )}
-    </Layout>
+    <>
+      <NextSeo title="Checkout | Audiophile" noindex />
+      <Layout showFooterCard={false}>
+        {isNavbarOpen ? (
+          <Navbar />
+        ) : (
+          <Wrapper>
+            {openConfirmationBox && <ConfirmationModal />}
+            <BackButton />
+            <Container onSubmit={handleSubmit(handleCheckout)}>
+              <CheckoutForm>
+                <Heading>Checkout</Heading>
+                <BillingDetails register={register} errors={errors} />
+                <ShippingInfo register={register} errors={errors} />
+                <PaymentDetails
+                  register={register}
+                  errors={errors}
+                  onChange={handleSelectPaymentMethod}
+                />
+              </CheckoutForm>
+              <SummaryContainer>
+                <SummaryCard />
+                <CheckoutButton
+                  type="submit"
+                  disabled={isSubmitting || emptyList}
+                >
+                  Continue & pay
+                </CheckoutButton>
+              </SummaryContainer>
+            </Container>
+          </Wrapper>
+        )}
+      </Layout>
+    </>
   )
 }

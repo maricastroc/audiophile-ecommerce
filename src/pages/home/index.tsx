@@ -11,6 +11,7 @@ import { Navbar } from '@/components/Navbar'
 
 import { ProductsContainer, ShopContainer } from './styles'
 import Layout from '@/components/Layout'
+import { NextSeo } from 'next-seo'
 
 export default function Home() {
   const { isNavbarOpen, handleResize } = useContext(NavbarContext)
@@ -20,28 +21,31 @@ export default function Home() {
   }, [handleResize])
 
   return (
-    <Layout>
-      {isNavbarOpen ? (
-        <Navbar />
-      ) : (
-        <>
-          <HeadphonesCard />
-          <ProductsContainer>
-            <ShopContainer>
-              {navigationCards.map((card, index) => (
-                <NavigationCard
-                  key={index}
-                  title={card.title}
-                  imageUrl={card.imageUrl}
-                />
-              ))}
-            </ShopContainer>
-            <Zx9SpeakerCard />
-            <Zx7SpeakerCard />
-            <Earphones />
-          </ProductsContainer>
-        </>
-      )}
-    </Layout>
+    <>
+      <NextSeo title="Home | Audiophile" />
+      <Layout>
+        {isNavbarOpen ? (
+          <Navbar />
+        ) : (
+          <>
+            <HeadphonesCard />
+            <ProductsContainer>
+              <ShopContainer>
+                {navigationCards.map((card, index) => (
+                  <NavigationCard
+                    key={index}
+                    title={card.title}
+                    imageUrl={card.imageUrl}
+                  />
+                ))}
+              </ShopContainer>
+              <Zx9SpeakerCard />
+              <Zx7SpeakerCard />
+              <Earphones />
+            </ProductsContainer>
+          </>
+        )}
+      </Layout>
+    </>
   )
 }

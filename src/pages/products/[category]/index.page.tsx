@@ -10,6 +10,8 @@ import { navigationCards } from '@/data/navigationCards'
 import Layout from '@/components/Layout'
 import { useRouter } from 'next/router'
 import { productsData } from '@/data/productsData'
+import { NextSeo } from 'next-seo'
+import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter'
 
 export default function Product() {
   const { isNavbarOpen, handleResize } = useContext(NavbarContext)
@@ -30,20 +32,25 @@ export default function Product() {
   }
 
   return (
-    <Layout>
-      {isNavbarOpen ? (
-        <Navbar />
-      ) : (
-        <>
-          <ProductsHeader title={category as string} />
-          <ProductsContainer>
-            {productList.map((data, index) => (
-              <ProductCard key={index} {...data} />
-            ))}
-            <ShopContainer>{renderNavigationCards()}</ShopContainer>
-          </ProductsContainer>
-        </>
-      )}
-    </Layout>
+    <>
+      <NextSeo
+        title={`${capitalizeFirstLetter(category as string)} | Audiophile`}
+      />
+      <Layout>
+        {isNavbarOpen ? (
+          <Navbar />
+        ) : (
+          <>
+            <ProductsHeader title={category as string} />
+            <ProductsContainer>
+              {productList.map((data, index) => (
+                <ProductCard key={index} {...data} />
+              ))}
+              <ShopContainer>{renderNavigationCards()}</ShopContainer>
+            </ProductsContainer>
+          </>
+        )}
+      </Layout>
+    </>
   )
 }
