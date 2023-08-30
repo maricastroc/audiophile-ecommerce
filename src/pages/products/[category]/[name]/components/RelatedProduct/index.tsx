@@ -22,7 +22,7 @@ export function RelatedProduct({ product }: RelatedProductProps) {
   return (
     <Container>
       <Wrapper>
-        {product.relatedProducts?.map((item, index) => {
+        {product?.relatedProducts?.map((item, index) => {
           return (
             <Product key={index}>
               <Image

@@ -18,20 +18,20 @@ export function ProductImages({ product }: ProductImagesProps) {
           alt=""
           width={327}
           height={174}
-          src={`/assets/${product.demoImageUrl}/${screenType}/image-gallery-1.jpg`}
+          src={`/assets/${product?.demoImageUrl}/${screenType}/image-gallery-1.jpg`}
         />
         <Image
           alt=""
           width={327}
           height={174}
-          src={`/assets/${product.demoImageUrl}/${screenType}/image-gallery-2.jpg`}
+          src={`/assets/${product?.demoImageUrl}/${screenType}/image-gallery-2.jpg`}
         />
       </Wrapper>
       <Image
         alt=""
         width={327}
         height={174}
-        src={`/assets/${product.demoImageUrl}/${screenType}/image-gallery-3.jpg`}
+        src={`/assets/${product?.demoImageUrl}/${screenType}/image-gallery-3.jpg`}
       />
     </Container>
   )
