@@ -20,11 +20,11 @@ export default function ProductCard({
 
   const [isLoading, setIsLoading] = useState(false)
 
-  function redirectToPage() {
+  async function redirectToPage() {
     setIsLoading(true)
 
     const basePath = router.basePath
-    router.push(`${basePath}/products/${category}/${name}`)
+    await router.push(`${basePath}/products/${category}/${name}`)
 
     setIsLoading(false)
   }
