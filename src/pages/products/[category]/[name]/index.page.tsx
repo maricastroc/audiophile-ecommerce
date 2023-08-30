@@ -51,7 +51,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 <InTheBoxContainer>
                   <h2>In the Box</h2>
                   <InTheBoxItems>
-                    {product.itemsInTheBox?.map((item, index) => (
+                    {product?.itemsInTheBox?.map((item, index) => (
                       <Item key={index}>
                         <span>{item.quantity}x</span>
                         <p>{item.product}</p>
