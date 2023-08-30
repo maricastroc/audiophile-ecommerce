@@ -23,7 +23,7 @@ export default function ShopProductCard({
   title,
   description,
   abbreviation,
-  newProduct,
+  isNewProduct,
   imageUrl,
   price,
 }: ProductInfo) {
@@ -64,7 +64,7 @@ export default function ShopProductCard({
         />
       )}
       <TextContainer>
-        {newProduct && <Label>New Product</Label>}
+        {isNewProduct && <Label>New Product</Label>}
         <Heading>{title}</Heading>
         <Paragraph>{description}</Paragraph>
         {price && <Price>{formattedPrice(price)}</Price>}

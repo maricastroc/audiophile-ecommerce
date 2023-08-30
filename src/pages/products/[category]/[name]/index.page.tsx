@@ -67,7 +67,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               <InTheBoxContainer>
                 <h2>In the Box</h2>
                 <InTheBoxItems>
-                  {product.inTheBox?.map((item, index) => (
+                  {product.itemsInTheBox?.map((item, index) => (
                     <Item key={index}>
                       <span>{item.quantity}x</span>
                       <p>{item.product}</p>
@@ -82,26 +82,26 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                   alt=""
                   width={327}
                   height={174}
-                  src={`/assets/${product.demoImage}/${screenType}/image-gallery-1.jpg`}
+                  src={`/assets/${product.demoImageUrl}/${screenType}/image-gallery-1.jpg`}
                 />
                 <Image
                   alt=""
                   width={327}
                   height={174}
-                  src={`/assets/${product.demoImage}/${screenType}/image-gallery-2.jpg`}
+                  src={`/assets/${product.demoImageUrl}/${screenType}/image-gallery-2.jpg`}
                 />
               </ImagesWrapper>
               <Image
                 alt=""
                 width={327}
                 height={174}
-                src={`/assets/${product.demoImage}/${screenType}/image-gallery-3.jpg`}
+                src={`/assets/${product.demoImageUrl}/${screenType}/image-gallery-3.jpg`}
               />
             </ImagesContainer>
             <RecommendContainer>
               <h2>You may also like</h2>
               <RecommendContent>
-                {product.mayAlsoLike?.map((item, index) => {
+                {product.relatedProducts?.map((item, index) => {
                   return (
                     <RecommendItem key={index}>
                       <Image

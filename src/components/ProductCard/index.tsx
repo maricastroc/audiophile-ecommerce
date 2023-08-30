@@ -9,11 +9,11 @@ import { ProductInfo } from '@/types/productTypes'
 export default function ProductCard({
   title,
   description,
-  newProduct,
+  isNewProduct,
   imageUrl,
   name,
   category,
-  orientation = 'left',
+  imageOrientation = 'left',
 }: ProductInfo) {
   const { screenType } = useContext(NavbarContext)
   const router = useRouter()
@@ -26,7 +26,7 @@ export default function ProductCard({
   }
 
   return (
-    <Container className={orientation}>
+    <Container className={imageOrientation}>
       <Image
         src={`${imageUrl}${screenType}/image-category-page-preview.jpg`}
         alt=""
@@ -34,7 +34,7 @@ export default function ProductCard({
         height={340}
       />
       <TextContainer>
-        {newProduct && <Label>New Product</Label>}
+        {isNewProduct && <Label>New Product</Label>}
         <Heading>{title}</Heading>
         <Paragraph>{description}</Paragraph>
         <Button type="primary" title="See Product" onClick={redirectToPage} />

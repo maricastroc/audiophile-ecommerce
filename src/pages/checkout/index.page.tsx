@@ -21,6 +21,7 @@ import {
   Wrapper,
 } from './styles'
 import { ConfirmationModal } from '@/components/ConfirmationModal'
+import { ProductsContext } from '@/contexts/ProductsContext'
 
 const formSchema = z
   .object({
@@ -65,7 +66,10 @@ export interface FormItemProps {
 
 export default function Checkout() {
   const { isNavbarOpen } = useContext(NavbarContext)
+  const { shopList } = useContext(ProductsContext)
   const [openConfirmationBox, setOpenConfirmationBox] = useState(false)
+
+  const emptyList = shopList.length === 0
 
   const {
     register,
@@ -110,7 +114,10 @@ export default function Checkout() {
             </CheckoutForm>
             <SummaryContainer>
               <SummaryCard />
-              <CheckoutButton type="submit" disabled={isSubmitting}>
+              <CheckoutButton
+                type="submit"
+                disabled={isSubmitting || emptyList}
+              >
                 Continue & pay
               </CheckoutButton>
             </SummaryContainer>

@@ -142,6 +142,8 @@ export const CheckoutButton = styled('button', {
     disabled: {
       true: {
         cursor: 'not-allowed',
+        pointerEvents: 'none',
+        backgroundColor: '$gray500',
       },
     },
   },

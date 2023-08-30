@@ -15,13 +15,13 @@ export interface ProductInfo {
   abbreviation: string
   description: string
   imageUrl: string
-  newProduct: boolean
-  orientation?: string
+  isNewProduct: boolean
+  imageOrientation?: string
   name: string
   category: string
   price?: number
   features?: string
-  inTheBox?: InTheBoxProps[]
-  demoImage?: string
-  mayAlsoLike?: SuggestionProps[]
+  itemsInTheBox?: InTheBoxProps[]
+  demoImageUrl?: string
+  relatedProducts?: SuggestionProps[]
 }

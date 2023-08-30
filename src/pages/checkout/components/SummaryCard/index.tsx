@@ -26,6 +26,8 @@ export function SummaryCard() {
 
   const total = calculateFinalPrice(totalPrice)
 
+  const emptyList = shopList.length === 0
+
   return (
     <Container>
       <Heading>Summary</Heading>
@@ -50,24 +52,26 @@ export function SummaryCard() {
               </ProductContainer>
             )
           })}
-        <PriceContainer>
-          <PriceItem>
-            <span>Total</span>
-            <p>{formattedPrice(totalPrice)}</p>
-          </PriceItem>
-          <PriceItem>
-            <span>Shipping</span>
-            <p>{formattedPrice(50)}</p>
-          </PriceItem>
-          <PriceItem>
-            <span>Vat (included)</span>
-            <p>{formattedPrice(vat)}</p>
-          </PriceItem>
-          <TotalItem>
-            <span>Grand total</span>
-            <p>{formattedPrice(total)}</p>
-          </TotalItem>
-        </PriceContainer>
+        {!emptyList && (
+          <PriceContainer>
+            <PriceItem>
+              <span>Total</span>
+              <p>{formattedPrice(totalPrice)}</p>
+            </PriceItem>
+            <PriceItem>
+              <span>Shipping</span>
+              <p>{formattedPrice(50)}</p>
+            </PriceItem>
+            <PriceItem>
+              <span>Vat (included)</span>
+              <p>{formattedPrice(vat)}</p>
+            </PriceItem>
+            <TotalItem>
+              <span>Grand total</span>
+              <p>{formattedPrice(total)}</p>
+            </TotalItem>
+          </PriceContainer>
+        )}
       </ProductsWrapper>
     </Container>
   )
