@@ -7,7 +7,7 @@ export function Earphones() {
 
   async function redirectToPath() {
     const basePath = router.basePath
-    const path = `${basePath}/products/earphones/wx1-wireless-earphones`
+    const path = `${basePath}/products/earphones/yx1-wireless-earphones`
     await router.push(path)
   }
 
