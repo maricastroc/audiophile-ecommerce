@@ -1,6 +1,5 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { ProductsContext } from '@/contexts/ProductsContext'
-import Image from 'next/image'
 import { formattedPrice } from '@/utils/formatPrice'
 
 import {
@@ -20,23 +19,36 @@ import { calculateFinalPrice } from '@/utils/calculateFinalPrice'
 export function SummaryCard() {
   const { shopList, calculateTotalPrice } = useContext(ProductsContext)
 
-  const totalPrice = calculateTotalPrice()
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [vat, setVat] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [isListEmpty, setIsListEmpty] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
-  const vat = (totalPrice * 20) / 100
-
-  const total = calculateFinalPrice(totalPrice)
-
-  const emptyList = shopList.length === 0
+useEffect(() => {
+  setIsClient(true);
+}, []);
+  
+  useEffect(() => {
+    const price = calculateTotalPrice();
+    const calculatedVat = (price * 20) / 100;
+    const finalTotal = calculateFinalPrice(price);
+  
+    setTotalPrice(price);
+    setVat(calculatedVat);
+    setTotal(finalTotal);
+    setIsListEmpty(shopList.length === 0)
+  }, [shopList]);
 
   return (
     <Container>
       <Heading>Summary</Heading>
       <ProductsWrapper>
-        {shopList.length > 0 &&
+        {shopList.length > 0 && isClient &&
           shopList.map((item, index) => {
             return (
               <ProductContainer key={index}>
-                <Image
+                <img
                   alt=""
                   width={64}
                   height={64}
@@ -52,7 +64,7 @@ export function SummaryCard() {
               </ProductContainer>
             )
           })}
-        {!emptyList && (
+        {!isListEmpty && (
           <PriceContainer>
             <PriceItem>
               <span>Total</span>

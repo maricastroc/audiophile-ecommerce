@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { NavbarContext } from '@/contexts/NavbarContext'
 import { FieldError, UseFormRegister, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -69,6 +69,7 @@ export default function Checkout() {
   const { isNavbarOpen } = useContext(NavbarContext)
   const { shopList } = useContext(ProductsContext)
   const [openConfirmationBox, setOpenConfirmationBox] = useState(false)
+  const [isClient, setIsClient] = useState(false);
 
   const emptyList = shopList.length === 0
 
@@ -94,11 +95,15 @@ export default function Checkout() {
     setValue('payment', method)
   }
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <>
       <NextSeo title="Checkout | Audiophile" noindex />
       <Layout showFooterCard={false}>
-        {isNavbarOpen ? (
+        {isClient && isNavbarOpen ? (
           <Navbar />
         ) : (
           <Wrapper>
